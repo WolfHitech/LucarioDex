@@ -168,7 +168,7 @@ Aiutaci a migliorare! Quando apri una segnalazione, includi:
 - **zona/luogo** e **Pokémon** coinvolti;
 - versione mostrata in basso nell'app (`v0.1.0`).
 
-**Canale ufficiale:** `[ t.me/lndefinizione | Telegram | Link ]`
+**Canale ufficiale:** `[ https://t.me/lndefinizione ]`
 
 ---
 
