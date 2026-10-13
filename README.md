@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/banner.png" alt="LucarioDex — BETA" width="100%">
+  <img src="assets/banner.png" alt="LucarioDex — BETA" width="100%">
 </p>
 
 <h1 align="center">LucarioDex</h1>
