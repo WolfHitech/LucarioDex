@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="assets/banner.png" alt="LucarioDex — BETA" width="100%">
+  <img src="assets/readme/banner.png" alt="LucarioDex — BETA" width="100%">
 </p>
+
+<h1 align="center">LucarioDex</h1>
 <p align="center"><b>BETA PUBBLICA — APERTA PER 2 SETTIMANE</b></p>
 
 <p align="center">
@@ -20,6 +22,8 @@ contano durante la cattura e la lotta, senza mai coprirti il gioco.
 > **La beta resta aperta per 2 settimane.** Durante questo periodo il software
 > è in evoluzione: segnala bug, proponi idee e racconta la tua esperienza.
 > Ogni feedback aiuta a rendere la versione finale più stabile e completa.
+
+> **Compatibilità con i ToS di PokeMMO:** LucarioDex **non viola i ToS di PokeMMO**. Non modifica il client, non inietta codice, non automatizza azioni (botting), non accede ai socket o ai file di gioco. Legge **unicamente ciò che è visibile sullo schermo** (screen capture della finestra di PokeMMO) per fornire informazioni puramente informative. È un **overlay visivo esterno** (non interagisce direttamente con il gioco), quindi non rientra nelle categorie di cheating/botting proibite.
 
 **Data apertura:** `14/10/2026` · **Data chiusura prevista:** `28/10/2026`
 
@@ -58,9 +62,7 @@ con tecniche di **Computer Vision + OCR** e presenta subito:
 - il **confronto di Velocità** con il nemico;
 - gli **incontri della zona** in cui ti trovi;
 - un **Pokédex interno** completo, sempre a portata di ricerca.
-- Rispetta le regole di gioco perché non interagisce mai direttamente con il gioco/client,
-  ma legge solo quello che vede su schermo come se fosse ad esempio OBS o un registra schermo (Questo software non va mai a connettersi a internet).
-  
+
 Nasce per togliere le distrazioni: niente alt-tab, niente tabelle da consultare.
 Metti l'overlay dove vuoi e gioca.
 
@@ -168,7 +170,7 @@ Aiutaci a migliorare! Quando apri una segnalazione, includi:
 - **zona/luogo** e **Pokémon** coinvolti;
 - versione mostrata in basso nell'app (`v0.1.0`).
 
-**Canale ufficiale:** `[ https://t.me/lndefinizione ]`
+**Canale ufficiale:** `[ t.me/lndefinizione ]`
 
 ---
 
@@ -179,6 +181,20 @@ Aiutaci a migliorare! Quando apri una segnalazione, includi:
 - Alcune ball condizionali richiedono il turno corretto: attiva "Leggi turno"
   se noti valori imprecisi.
 - Il software è in evoluzione: **funzioni e interfaccia possono cambiare** durante le 2 settimane.
+
+---
+
+## Legalità & rispetto dei ToS di PokeMMO
+
+**LucarioDex rispetta i Termini di Servizio di PokeMMO.**
+
+- **Nessuna modifica al client:** L'app non altera, decritta o inietta alcun codice nel client di PokeMMO.
+- **Nessuna automazione:** Non esegue azioni automatiche, non preme pulsanti, non muove il personaggio e non invia comandi al server.
+- **Solo lettura visiva:** Analizza esclusivamente l'immagine della finestra di PokeMMO (screen capture) — ciò che vedi tu stesso. Non legge memoria, socket, pacchetti di rete o file interni del gioco.
+- **Overlay puramente informativo:** Le informazioni mostrate (efficacia tipi, danni stimati, probabilità di cattura, spawn zona) sono calcoli locali basati sui dati presenti nell'app. Nessuna interazione diretta con il gioco.
+- **Non è un bot/cheat:** Rientra nella categoria degli "overlay informativi" esterni, non nelle violazioni relative a botting, hacking o terze parti proibite.
+
+Se dovessero esserci cambiamenti futuri nei ToS, l'uso rimane a responsabilità dell'utente.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat&logo=python&logoColor=white" alt="Python">
