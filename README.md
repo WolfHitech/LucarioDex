@@ -58,7 +58,9 @@ con tecniche di **Computer Vision + OCR** e presenta subito:
 - il **confronto di Velocità** con il nemico;
 - gli **incontri della zona** in cui ti trovi;
 - un **Pokédex interno** completo, sempre a portata di ricerca.
-
+- Rispetta le regole di gioco perché non interagisce mai direttamente con il gioco/client,
+  ma legge solo quello che vede su schermo come se fosse ad esempio OBS o un registra schermo (Questo software non va mai a connettersi a internet).
+  
 Nasce per togliere le distrazioni: niente alt-tab, niente tabelle da consultare.
 Metti l'overlay dove vuoi e gioca.
 
