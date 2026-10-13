@@ -1,8 +1,6 @@
 <p align="center">
   <img src="assets/banner.png" alt="LucarioDex — BETA" width="100%">
 </p>
-
-<h1 align="center">LucarioDex</h1>
 <p align="center"><b>BETA PUBBLICA — APERTA PER 2 SETTIMANE</b></p>
 
 <p align="center">
