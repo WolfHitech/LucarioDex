@@ -33,11 +33,12 @@ In breve:
 - Efficacia, mosse lette a schermo, danno stimato, pericolo e calcolo cattura.
 - Pannello **Zona** con spawn, rarità, livelli, EV e specie già catturate.
 - **Guida turni** per palestre, Elite 4, farm e percorsi personalizzati.
+- **PvE** con rerun palestre, level cap e storia delle 5 regioni, leghe.
 - **Ditto Farm** per non mandare KO Ditto prima della cattura.
 - **PvP** con squadra, avversario, campo, ordine di turno e stime di danno.
 - **StratDex**: set e mosse più usati, con benchmark di velocità per tier.
 - **Catena di catture** della stessa specie, usata dalle ball condizionali.
-- **Aggiornamenti integrati** nella build installata, con download e verifica.
+- **Aggiornamenti integrati**, con download e verifica del file.
 - Interfaccia in italiano o inglese, temi, profili e scorciatoie configurabili.
 
 Questa guida è scritta per essere letta dall'inizio alla fine la prima volta,
@@ -50,24 +51,29 @@ con le impostazioni di default funziona già.
 
 - **Windows 10 o 11**.
 - **PokeMMO** avviato. Va bene sia in finestra sia in borderless.
-- Il file **`LucarioDex-Setup-0.1.4.exe`** (dentro la cartella `dist`), oppure
-  il sorgente se vuoi avviarlo con Python.
+- Il file **`LucarioDex-Setup-0.1.4.exe`**.
 
-L'installer è per utente e non richiede permessi da amministratore. Di default
-installa in `%LOCALAPPDATA%\LucarioDex` e crea la voce nel menu Start. La
-scorciatoia sul desktop è opzionale.
+Non serve installare Python, OCR o altre librerie: dentro il setup c'è già
+tutto quello che serve.
 
-### Se lo avvii dal codice
+---
 
-Servono **Python 3.12 o successivo** e le dipendenze del progetto:
+## Installazione
 
-```powershell
-python -m pip install PyQt6 opencv-python-headless numpy Pillow rapidfuzz rapidocr-onnxruntime onnxruntime
-python app.py
-```
+1. Scarica **`LucarioDex-Setup-0.1.4.exe`** dalla pagina delle release:
+   [github.com/WolfHitech/LucarioDex/releases](https://github.com/WolfHitech/LucarioDex/releases).
+2. Apri il file. Se Windows mostra l'avviso di SmartScreen (editore non
+   riconosciuto), scegli **Ulteriori informazioni** e poi **Esegui comunque**.
+3. Segui il setup. L'installazione è per utente e non richiede permessi da
+   amministratore.
+4. Al termine trovi LucarioDex nel menu Start. La scorciatoia sul desktop è
+   opzionale.
 
-Se stai usando la build già pronta non devi installare nulla a mano: OCR,
-modelli e dataset sono già inclusi nell'eseguibile.
+Di default il programma si installa in `%LOCALAPPDATA%\LucarioDex`.
+
+Se vuoi disinstallarlo, usa **Impostazioni → App → LucarioDex → Disinstalla**.
+Le impostazioni e i dati personali restano nella cartella indicata più sotto:
+puoi cancellarli a mano se vuoi ripartire da zero.
 
 ---
 
@@ -123,7 +129,7 @@ La finestra è divisa in poche zone, sempre le stesse:
   **Rileva i miei Pokémon**, LucarioDex prova a compilarli da sola durante la
   scansione. Puoi comunque sistemarli a mano.
 - **Pulsanti in basso**: **Scansiona**, **Auto** e la riga **Zona · Guida ·
-  Ditto · PvP**. I quattro pulsanti aprono i rispettivi pannelli e restano
+  Ditto · PvP · PvE**. I cinque pulsanti aprono i rispettivi pannelli e restano
   evidenziati mentre sono aperti. Nella riga in fondo vedi lo stato della
   connessione, la versione e l'ora dell'ultima scansione; cliccala per aprire
   le impostazioni. Quando catturi più esemplari della stessa specie di fila
@@ -242,16 +248,44 @@ Se il percorso dichiara un **roster**, il pannello mostra il team avversario
 possibile e lo restringe man mano che le specie compaiono. Quando sono state
 viste tutte, scrive `Tutte le specie osservate`.
 
-I percorsi personali stanno in **`routes_user.json`**, nella cartella dei dati
-utente (vedi più sotto). Il formato è lo stesso di `data/routes.json`: puoi
-copiare un esempio, cambiare nome, passi e roster, e riavviare LucarioDex. Se
-un percorso ha dei passi con il campo `turn`, la guida può avanzare da sola
-quando il turno letto dall'OCR raggiunge quel valore. Per i dettagli del
-formato c'è `docs/routes.md`.
+I percorsi inclusi sono pronti all'uso e vengono aggiornati con l'app. Se un
+percorso ha dei passi con il campo `turn`, la guida può avanzare da sola quando
+il turno letto a schermo raggiunge quel valore.
 
 > La Guida è pensata per essere letta, non per giocare al posto tuo. Se un
 > passo non scatta da solo, controlla che **Leggi turno** sia attivo e che il
 > numero di turno sia visibile a schermo.
+
+---
+
+## PvE: rerun, storia e leghe
+
+Il pannello **PvE** raccoglie le tre cose che servono dopo la storia, senza
+sostituire la Guida turni. Si apre dal pulsante **PvE** o dalla tray, e ha tre
+schede:
+
+- **Rerun**: come funzionano i rematch (6v6 doppio, cooldown 18 ore, cinque
+  allenatori da battere per riattivare una palestra), checklist di partenza e
+  sei strategie della community: Double Typhlosion, Sun & Rain Duo, Prehistoric
+  5, 7 Hells, Tempest Explosion e 6 Pillars. Per ognuna vedi team, mosse,
+  passi, palestre sicure e palestre da saltare. Il pulsante **Apri nella Guida**
+  carica i passi nel pannello Guida turni, così puoi seguirli uno alla volta.
+  In fondo c'è il percorso ottimizzato regione per regione, con la coppia di
+  mosse consigliata per ogni palestra.
+- **Storia**: per ogni regione, gli 8 badge con capipalestra, tipo, level cap e
+  un consiglio concreto; in testa trovi la sequenza completa dei level cap.
+  Spunta un badge per segnare il progresso: il contatore in alto tiene il conto.
+- **Leghe**: Superquattro e Campione delle 5 regioni, con tipo, livello, livello
+  di difficoltà, contromosse e premio base/charm. Anche qui puoi spuntare i
+  membri battuti e aprire il piano nella Guida turni.
+
+I progressi, la scheda e la regione scelta vengono salvati in `config.json`
+sotto la chiave `pve`, insieme alla posizione del pannello. I contenuti stanno
+in `data/pve_guide.json`: puoi aggiornarli senza toccare il codice.
+
+> I dati su palestre, leghe e strategie cambiano con le patch di PokeMMO.
+> LucarioDex li tiene in un file separato proprio per poterli correggere in
+> fretta: se un livello o una strategia non torna, aggiorna il JSON.
 
 ---
 
@@ -262,14 +296,14 @@ Si apre col pulsante **Ditto** o con `Ctrl + Shift + D`.
 
 Cosa gli serve:
 
-- il tuo **lead** (specie, livello, IV, EV, natura);
+- il Pokémon che usi (specie, livello, IV, EV, natura);
 - la **mossa** che usi (per esempio False Swipe);
 - il **livello** e i **PS** di Ditto.
 
 In cambio ti mostra il danno stimato su un Ditto normale e su un Ditto dopo
-**Transform**, che difende come il tuo lead ma mantiene i suoi PS. Il pannello
-ti avvisa se rischi il KO, ti suggerisce la ball migliore a PS pieni e a 1 PS
-con sonno, e tiene il conto delle catture con **+1 cattura**.
+**Transform**, che difende come il tuo Pokémon ma mantiene i suoi PS. Il
+pannello ti avvisa se rischi il KO, ti suggerisce la ball migliore a PS pieni
+e a 1 PS con sonno, e tiene il conto delle catture con **+1 cattura**.
 
 La nota su False Swipe è volutamente esplicita: se la mossa non può mettere KO,
 il rischio scende quasi a zero. Se usi un attacco normale, a PS bassi il KO è
@@ -280,8 +314,8 @@ pannello.
 
 ## PvP
 
-La modalità PvP si attiva dal pulsante **PvP**. Sostituisce il pannello PvE
-con quattro schede:
+La modalità PvP si attiva dal pulsante **PvP**. Sostituisce il pannello di
+analisi della lotta con quattro schede:
 
 - **Squadra**: i tuoi sei slot, con specie, livello, natura, oggetto, abilità,
   mosse, IV/EV e boost. Puoi salvare gli slot nei **box**, ricaricarli,
@@ -310,10 +344,9 @@ lascia vuoto il resto.
 
 ### StratDex: dati d'uso comuni
 
-StratDex è **sempre attivo** quando `meta.json` contiene dati validi: non c'è
-nessun interruttore da sbloccare. Integra i dati pubblici di
-[mmoshowdown.com](https://mmoshowdown.com/dex), raccolti dal client PokeMMO
-Showdown. Non sono dati ufficiali della ladder: vanno letti come
+StratDex è **sempre attivo**: non c'è nessun interruttore da sbloccare. Integra
+i dati pubblici di [mmoshowdown.com](https://mmoshowdown.com/dex), raccolti dal
+client PokeMMO Showdown. Non sono dati ufficiali della ladder: vanno letti come
 **probabilità**, non come certezza.
 
 Cosa aggiunge:
@@ -331,29 +364,10 @@ Cosa aggiunge:
 I set importati possono essere esportati in formato Showdown con il normale
 pulsante **Esporta set**, quindi finiscono nei box come qualsiasi altro set.
 
-I dati stanno in **`meta.json`**. Il programma ne usa una copia modificabile a
-mano accanto alle impostazioni:
-
-| Come gira LucarioDex | File da modificare |
-| --- | --- |
-| Installer / `.exe` | `%APPDATA%\LucarioDex\meta.json` |
-| Sorgenti (`python app.py`) | `meta.json` nella cartella del progetto |
-
-`data/meta.json` è la copia inclusa nell'app: viene usata per creare il file
-utente la prima volta e come riserva se il file utente manca o non è valido.
-Cancellare il file utente ripristina i dati inclusi. Il file viene riletto
-automaticamente quando cambia, senza riavviare l'app. Per provare senza toccare
-il file reale: `$env:LUCARIODEX_META = "C:\temp\meta.json"`.
-
-Lo schema completo, il formato delle percentuali e il significato dei campi
-sono documentati in **[`FEATURES.md`](FEATURES.md)**.
-
-Per rigenerare il dataset incluso:
-
-```powershell
-python tools\build_stratdex.py
-python tools\build_stratdex.py --tiers ou,uu --limit 5   # prova veloce
-```
+I dati sono inclusi nell'app e si aggiornano insieme a LucarioDex: non devi
+scaricare nulla a parte. Se in futuro vorrai personalizzarli, il file si chiama
+`meta.json` e si trova nella cartella dei dati utente (vedi **Dove stanno i
+file**); le modifiche vengono rilette automaticamente.
 
 ---
 
@@ -399,37 +413,28 @@ diversi.
 
 **Aggiornamenti**
 
-Qui vedi la versione installata e il pulsante **Cerca aggiornamenti**. Nella
-build installata il controllo parte anche da solo all'avvio, in background.
+Qui vedi la versione installata e il pulsante **Cerca aggiornamenti**. Il
+controllo parte anche da solo all'avvio, in background.
 
 ---
 
 ## Aggiornamenti
 
-La versione installata controlla le release su GitHub e, se trova una versione
-più recente, mostra le note e due scelte:
+LucarioDex controlla da solo se è disponibile una versione più recente e, se
+la trova, mostra le note e due scelte:
 
 - **Aggiorna ora**: scarica l'installer, lo verifica se la release fornisce un
-  checksum SHA-256, chiude LucarioDex e avvia il setup. I dati utente in
-  `%APPDATA%\LucarioDex` restano al loro posto.
+  checksum SHA-256, chiude LucarioDex e avvia il setup. Le impostazioni e i
+  dati personali restano al loro posto.
 - **Salta (non consigliato)**: avvia la versione attuale e ricorda quella
   scelta, così non viene riproposto lo stesso avviso a ogni avvio.
 
 Se il controllo non riesce (per esempio senza rete), l'app continua a
-funzionare normalmente. Se avvii dal sorgente, l'aggiornamento automatico non è
-disponibile: il pulsante apre la pagina delle release per scaricare la nuova
-versione.
+funzionare normalmente.
 
-Il controllo aggiornamenti è l'unica connessione di rete dell'app. Non invia
-dati d'uso, statistiche o contenuti del gioco: contatta solo l'API pubblica di
-GitHub per leggere l'ultima release.
-
-Per pubblicare un aggiornamento, crea una release su
-`https://github.com/WolfHitech/LucarioDex/releases` con tag `v<versione>` e
-allega l'installer chiamandolo esattamente `LucarioDex-Setup-<versione>.exe`
-(es. `LucarioDex-Setup-0.1.5.exe`). Se aggiungi anche
-`LucarioDex-Setup-<versione>.exe.sha256`, il download viene verificato prima
-di avviare il setup.
+Il controllo aggiornamenti è l'unica connessione di rete di LucarioDex. Non
+invia dati d'uso, statistiche o contenuti del gioco: contatta solo l'API
+pubblica di GitHub per leggere l'ultima release.
 
 ---
 
@@ -469,7 +474,7 @@ dalla tray c'è comunque **Esci**. Il pannello PvP si apre dal pulsante
 
 ## Dove stanno i file
 
-Se usi la versione installata, configurazione e dati utente stanno in:
+Configurazione e dati personali stanno in:
 
 ```text
 %APPDATA%\LucarioDex
@@ -482,9 +487,10 @@ Qui trovi:
 | `config.json` | impostazioni, profili, squadre PvP, stato dei pannelli |
 | `dex_state.json` | Pokémon visti e catturati |
 | `routes_user.json` | i tuoi percorsi della Guida |
-| `meta.json` | dati d'uso StratDex, se vuoi personalizzarli |
+| `meta.json` | dati d'uso StratDex |
 
-Se avvii dal sorgente, gli stessi file stanno nella cartella del progetto.
+Se vuoi fare un backup o ripartire da zero, copia o cancella questa cartella.
+Il programma la ricrea al successivo avvio.
 
 Il file di log degli errori viene scritto in:
 
@@ -527,121 +533,18 @@ che la modalità (finestra, borderless, schermo intero) corrisponda a come stai
 giocando.
 
 **StratDex non compare.**
-Controlla che `meta.json` esista e sia un JSON valido. Se il file è rotto, la
+Controlla che il file `meta.json` esista e sia valido. Se il file è rotto, la
 scheda continua a mostrare l'ultima versione valida e segnala l'errore nel piè
-di pagina. Cancellando il file utente torni ai dati inclusi.
+di pagina. Cancellando il file torni ai dati inclusi.
 
 **L'aggiornamento non parte.**
-L'aggiornamento automatico funziona solo con la versione installata. Controlla
-la connessione e, se serve, scarica l'installer dalla pagina delle release. Se
-la release fornisce un checksum e il file scaricato non coincide, il download
-viene annullato per sicurezza.
+Controlla la connessione e riprova con **Cerca aggiornamenti**. Se serve,
+scarica l'installer dalla pagina delle release. Se la release fornisce un
+checksum e il file scaricato non coincide, il download viene annullato per
+sicurezza.
 
-**L'app si chiude o non parte dal codice.**
-Apri `%TEMP%\LucarioDex_error.log`. Se manca l'OCR, reinstalla le dipendenze con
-il comando della sezione "Se lo avvii dal codice".
-
----
-
-## Sviluppo
-
-### Struttura del progetto
-
-```text
-app.py                 punto di ingresso
-src/                   codice dell'app
-data/                  dataset PokeMMO, traduzioni, sprite e meta.json
-assets/                icone, banner, sfondi
-tools/                 build dataset, verifica dati, self-test
-tests/                 suite di test
-installer/             script Inno Setup
-docs/                  documentazione tecnica
-debug/                 script e immagini per il debug dell'OCR
-dist/                  build e installer generati
-```
-
-Moduli principali:
-
-- `src/window.py` — finestra, impostazioni, tray, hotkey e scansione.
-- `src/dexpanel.py` — pannello battaglia, efficacia, mosse, pericolo, cattura.
-- `src/dexview.py` — scheda Pokédex.
-- `src/zonepanel.py` / `src/zone.py` — pannello Zona e lookup degli spawn.
-- `src/routepanel.py` / `src/routes.py` — Guida turni.
-- `src/dittofarm.py` — pannello Ditto.
-- `src/pvppanel.py` / `src/pvp.py` — interfaccia e motore di calcolo PvP.
-- `src/stratdex.py` — caricamento e normalizzazione di `meta.json`.
-- `src/guides.py` — guide magnetiche e anteprima di aggancio durante il
-  trascinamento della finestra.
-- `src/updater.py` — controllo delle release GitHub e aggiornamento guidato.
-- `src/vision.py`, `src/ocr.py`, `src/recognize.py`, `src/battle_reader.py`,
-  `src/moves.py` — cattura schermo, OCR e lettura della battaglia.
-- `src/pokedata.py`, `src/catchcalc.py`, `src/damage.py` — dati e calcoli.
-- `src/config.py`, `src/dexstate.py`, `src/i18n.py`, `src/theme.py` —
-  persistenza, stato del dex, traduzioni e tema.
-
-### Test
-
-La suite gira anche senza PokeMMO e senza salvare dati nel repository:
-
-```powershell
-python tests\run_all.py
-```
-
-Imposta `QT_QPA_PLATFORM=offscreen`, esegue `tools/verify_data.py` e tutti i
-file `tests/test_*.py`. I test che dipendono da fixture mancanti vengono
-saltati senza fallire. La CI in `.github/workflows/ci.yml` esegue la stessa
-suite su Windows.
-
-### Build
-
-La build è **onedir** con PyInstaller e l'installer con Inno Setup 6:
-
-```powershell
-pyinstaller --clean --noconfirm LucarioDex.spec
-ISCC.exe installer\LucarioDex.iss
-```
-
-Il risultato sta in `dist\LucarioDex` e l'installer in
-`dist\LucarioDex-Setup-0.1.4.exe`. Il numero di versione va tenuto allineato in
-`src/__init__.py`, `version_info.txt` e `installer\LucarioDex.iss`.
-
-### Dati
-
-I dataset in `data/` sono scelti per **PokeMMO**, non per i giochi mainline:
-
-- `monster.json`, `moves.json` — specie, forme, statistiche e movepool.
-- `encounters.json` — spawn per zona, metodo, rarità e livelli.
-- `ev_yields.json` — EV assegnati, incluse le forme.
-- `species_core.json`, `balls.json`, `status_rates.json` — cattura.
-- `legendaries.json`, `move_flags.json`, `move_accuracy.json` — supporto ai
-  calcoli e ai filtri PvP.
-- `calibration.toml` — coordinate e soglie dell'HUD.
-- `lang/`, `sprites/` — traduzioni, nomi e immagini.
-- `meta.json` — dati d'uso StratDex.
-- `routes.json` — percorsi dimostrativi della Guida.
-
-Il controllo di conformità e provenienza è descritto in
-[`docs/data_audit_pokemmo.md`](docs/data_audit_pokemmo.md) ed eseguito da:
-
-```powershell
-python tools\verify_data.py
-```
-
-A runtime LucarioDex legge i dati dai file locali e, per StratDex, può
-ricaricare `meta.json` quando cambia. L'unica connessione di rete è il
-controllo aggiornamenti descritto sopra: avviene solo nella build installata
-su Windows e non invia dati del gioco o della configurazione.
-
----
-
-## Fonti e attribuzioni
-
-- Dati di gioco: datamine e progetti della community PokeMMO
-  (PokeMMO-Tools, PokeMMOZone/Data e affini), verificati in
-  `docs/data_audit_pokemmo.md`.
-- Dati d'uso StratDex: [mmoshowdown.com](https://mmoshowdown.com/dex) —
-  client PokeMMO Showdown.
-- LucarioDex non è affiliato a PokeMMO, Showdown o mmoshowdown.
+**L'app si chiude o non parte.**
+Apri `%TEMP%\LucarioDex_error.log` e allega il file quando scrivi per assistenza.
 
 ---
 
@@ -659,6 +562,16 @@ Canale ufficiale: `t.me/lndefinizione`
 
 Se il problema è un errore, allega anche `%TEMP%\LucarioDex_error.log`: fa
 risparmiare un sacco di domande.
+
+---
+
+## Crediti
+
+- Dati di gioco: datamine e progetti della community PokeMMO, verificati e
+  adattati per PokeMMO.
+- Dati d'uso StratDex: [mmoshowdown.com](https://mmoshowdown.com/dex) —
+  client PokeMMO Showdown.
+- LucarioDex non è affiliato a PokeMMO, Showdown o mmoshowdown.
 
 ---
 
