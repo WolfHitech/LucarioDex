@@ -571,7 +571,7 @@ risparmiare un sacco di domande.
   adattati per PokeMMO.
 - Dati d'uso StratDex: [mmoshowdown.com](https://mmoshowdown.com/dex) —
   client PokeMMO Showdown.
-- LucarioDex non è affiliato a PokeMMO, Showdown o mmoshowdown.
+- LucarioDex non è affiliato a PokeMMO.
 
 ---
 
