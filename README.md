@@ -3,10 +3,10 @@
 </p>
 
 <h1 align="center">LucarioDex</h1>
-<p align="center"><b>Overlay informativo per PokeMMO · Beta v0.1.4</b></p>
+<p align="center"><b>Overlay informativo per PokeMMO · Beta v0.1.7</b></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/versione-0.1.4-red" alt="versione">
+  <img src="https://img.shields.io/badge/versione-0.1.7-red" alt="versione">
   <img src="https://img.shields.io/badge/stato-beta-orange" alt="stato">
   <img src="https://img.shields.io/badge/gioco-PokeMMO-purple" alt="gioco">
   <img src="https://img.shields.io/badge/piattaforma-Windows%2010%2F11-blue" alt="piattaforma">
@@ -33,7 +33,7 @@ In breve:
 - Efficacia, mosse lette a schermo, danno stimato, pericolo e calcolo cattura.
 - Pannello **Zona** con spawn, rarità, livelli, EV e specie già catturate.
 - **Guida turni** per palestre, Elite 4, farm e percorsi personalizzati.
-- **PvE** con rerun palestre, level cap e storia delle 5 regioni, leghe.
+- **PvE** con rerun palestre, level cap e storia delle 5 regioni, leghe, Ho-Oh e eventi stagionali.
 - **Ditto Farm** per non mandare KO Ditto prima della cattura.
 - **PvP** con squadra, avversario, campo, ordine di turno e stime di danno.
 - **StratDex**: set e mosse più usati, con benchmark di velocità per tier.
@@ -51,7 +51,7 @@ con le impostazioni di default funziona già.
 
 - **Windows 10 o 11**.
 - **PokeMMO** avviato. Va bene sia in finestra sia in borderless.
-- Il file **`LucarioDex-Setup-0.1.4.exe`**.
+- Il file **`LucarioDex-Setup-0.1.7.exe`**.
 
 Non serve installare Python, OCR o altre librerie: dentro il setup c'è già
 tutto quello che serve.
@@ -60,7 +60,7 @@ tutto quello che serve.
 
 ## Installazione
 
-1. Scarica **`LucarioDex-Setup-0.1.4.exe`** dalla pagina delle release:
+1. Scarica **`LucarioDex-Setup-0.1.7.exe`** dalla pagina delle release:
    [github.com/WolfHitech/LucarioDex/releases](https://github.com/WolfHitech/LucarioDex/releases).
 2. Apri il file. Se Windows mostra l'avviso di SmartScreen (editore non
    riconosciuto), scegli **Ulteriori informazioni** e poi **Esegui comunque**.
@@ -258,11 +258,11 @@ il turno letto a schermo raggiunge quel valore.
 
 ---
 
-## PvE: rerun, storia e leghe
+## PvE: rerun, storia, leghe ed eventi
 
-Il pannello **PvE** raccoglie le tre cose che servono dopo la storia, senza
-sostituire la Guida turni. Si apre dal pulsante **PvE** o dalla tray, e ha tre
-schede:
+Il pannello **PvE** raccoglie le cose che servono dopo la storia, senza
+sostituire la Guida turni. Si apre dal pulsante **PvE** o dalla tray, e ha
+quattro schede:
 
 - **Rerun**: come funzionano i rematch (6v6 doppio, cooldown 18 ore, cinque
   allenatori da battere per riattivare una palestra), checklist di partenza e
@@ -278,14 +278,21 @@ schede:
 - **Leghe**: Superquattro e Campione delle 5 regioni, con tipo, livello, livello
   di difficoltà, contromosse e premio base/charm. Anche qui puoi spuntare i
   membri battuti e aprire il piano nella Guida turni.
+- **Eventi**: Ho-Oh con requisiti, team Trick Room e sequenza a 10 turni;
+  Pumpking di Halloween con accesso, modalità Easy/Hard e piano per fasi; il
+  Natale con la routine dei Lost Presents, swarm, raid e bonus shiny. Le
+  checklist sono spuntabili e la procedura si apre nella Guida turni.
 
-I progressi, la scheda e la regione scelta vengono salvati in `config.json`
-sotto la chiave `pve`, insieme alla posizione del pannello. I contenuti stanno
-in `data/pve_guide.json`: puoi aggiornarli senza toccare il codice.
+I progressi, la scheda e la regione (o guida) scelta vengono salvati in
+`config.json` sotto la chiave `pve`, insieme alla posizione del pannello. I
+contenuti stanno in `data/pve_guide.json`: puoi aggiornarli senza toccare il
+codice.
 
-> I dati su palestre, leghe e strategie cambiano con le patch di PokeMMO.
+> I dati su palestre, leghe, boss ed eventi cambiano con le patch di PokeMMO.
 > LucarioDex li tiene in un file separato proprio per poterli correggere in
-> fretta: se un livello o una strategia non torna, aggiorna il JSON.
+> fretta: se un livello, una soglia o una strategia non torna, aggiorna il JSON.
+> Per Halloween e Natale fanno fede il changelog e il post ufficiale
+> dell'edizione in corso.
 
 ---
 
@@ -420,8 +427,9 @@ controllo parte anche da solo all'avvio, in background.
 
 ## Aggiornamenti
 
-LucarioDex controlla da solo se è disponibile una versione più recente e, se
-la trova, mostra le note e due scelte:
+Il controllo parte all'avvio, prima che la finestra si apra: l'overlay non
+viene caricato finché non rispondi. Se c'è una versione più recente,
+LucarioDex mostra le note e due scelte:
 
 - **Aggiorna ora**: scarica l'installer, lo verifica se la release fornisce un
   checksum SHA-256, chiude LucarioDex e avvia il setup. Le impostazioni e i
@@ -435,6 +443,26 @@ funzionare normalmente.
 Il controllo aggiornamenti è l'unica connessione di rete di LucarioDex. Non
 invia dati d'uso, statistiche o contenuti del gioco: contatta solo l'API
 pubblica di GitHub per leggere l'ultima release.
+
+---
+
+## Pubblicare una nuova versione
+
+Le release si pubblicano da GitHub CLI: l'upload dal sito si ferma a 25 MB,
+mentre l'installer è di circa 100 MB (il limite degli allegati di una release è
+invece 2 GB). Dalla cartella del progetto:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\publish_release.ps1 -Version 0.1.7
+```
+
+Lo script crea il tag `v0.1.7` (o riusa quello esistente), carica
+`dist\LucarioDex-Setup-0.1.7.exe` con il relativo file `.sha256` e stampa
+l'indirizzo della release. Senza `-Version` usa la 0.1.7.
+
+L'aggiornamento automatico scatta solo quando il tag della release è più
+recente della versione installata: ripubblicare la stessa versione non avvisa
+nessuno.
 
 ---
 
@@ -571,7 +599,7 @@ risparmiare un sacco di domande.
   adattati per PokeMMO.
 - Dati d'uso StratDex: [mmoshowdown.com](https://mmoshowdown.com/dex) —
   client PokeMMO Showdown.
-- LucarioDex non è affiliato a PokeMMO.
+- LucarioDex non è affiliato a PokeMMO, Showdown o mmoshowdown.
 
 ---
 
@@ -587,5 +615,5 @@ regole, alcune letture potrebbero smettere di funzionare: in quel caso meglio
 aspettare un aggiornamento che forzare il programma.
 
 <p align="center">
-  <sub>Beta v0.1.4 · documentazione aggiornata il 28 ottobre 2026 · made by @WolfHitech · grazie per giocare e testare assieme a me.</sub>
+  <sub>Beta v0.1.7 · documentazione aggiornata il 29 ottobre 2026 · made by @WolfHitech · grazie per giocare e testare assieme a me.</sub>
 </p>
