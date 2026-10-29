@@ -283,17 +283,6 @@ quattro schede:
   Natale con la routine dei Lost Presents, swarm, raid e bonus shiny. Le
   checklist sono spuntabili e la procedura si apre nella Guida turni.
 
-I progressi, la scheda e la regione (o guida) scelta vengono salvati in
-`config.json` sotto la chiave `pve`, insieme alla posizione del pannello. I
-contenuti stanno in `data/pve_guide.json`: puoi aggiornarli senza toccare il
-codice.
-
-> I dati su palestre, leghe, boss ed eventi cambiano con le patch di PokeMMO.
-> LucarioDex li tiene in un file separato proprio per poterli correggere in
-> fretta: se un livello, una soglia o una strategia non torna, aggiorna il JSON.
-> Per Halloween e Natale fanno fede il changelog e il post ufficiale
-> dell'edizione in corso.
-
 ---
 
 ## Ditto Farm
