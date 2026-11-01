@@ -1,635 +1,367 @@
-<p align="center">
-  <img src="assets/banner.png" alt="LucarioDex" width="100%">
-</p>
+# LucarioDex 1.0
 
-<h1 align="center">LucarioDex</h1>
-<p align="center"><b>Overlay informativo per PokeMMO · v1.0</b></p>
+LucarioDex is a Windows overlay for PokeMMO. It reads the game image while you play and shows battle information, catch odds, area spawns, Pokédex pages, PvE guides and PvP calculations in a panel that stays above the game.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/versione-1.0-red" alt="versione">
-  <img src="https://img.shields.io/badge/stato-stabile-brightgreen" alt="stato">
-  <img src="https://img.shields.io/badge/gioco-PokeMMO-purple" alt="gioco">
-  <img src="https://img.shields.io/badge/piattaforma-Windows%2010%2F11-blue" alt="piattaforma">
-</p>
+Version 1.0 is the first non-beta release.
+
+LucarioDex keeps the information you need on screen, without opening a browser, checking a wiki or moving to another monitor. It is informational only: it does not play the game, click for you, send inputs or automate any action.
+
+## Requirements
+
+- Windows 10 or 11, 64-bit.
+- PokeMMO running in windowed or borderless mode.
+- The installer includes everything needed.
+
+## Installation
+
+Download `LucarioDex-Setup-1.0.exe` from the [releases page](https://github.com/WolfHitech/LucarioDex/releases).
+
+Run the installer. If Windows SmartScreen warns about an unknown publisher, choose **More info** and then **Run anyway**. The installation is per user, does not require administrator rights and places the program in `%LOCALAPPDATA%\LucarioDex`.
+
+To remove it, use **Settings → Apps → LucarioDex → Uninstall**. Your settings and personal data remain in `%APPDATA%\LucarioDex`; delete that folder if you also want to remove them.
+
+## Quick start
+
+1. Open PokeMMO and show the screen you want to read: an encounter, a battle or a route.
+2. Start LucarioDex. The overlay appears above the game.
+3. Press **Scan** for a manual reading, or enable **Auto** for automatic scanning.
+4. Adjust position and size in edit mode, then press `Ctrl + Alt + C` to let clicks reach the game.
+
+## Features
+
+### Battle analysis
+
+The enemy card shows species, level, HP, status, types and base speed, plus badges for Alpha Pokémon, hordes and a second opponent. Four tabs summarise the fight:
+
+- **Matchup**: weaknesses, resistances and immunities.
+- **Moves**: your moves read from the screen, ranked by estimated damage.
+- **Danger**: how much damage the opposing Pokémon can deal to you.
+- **Catch**: catch probability, recommended ball and expected cost.
+
+You can fill one or two slots for your own Pokémon, which enables damage estimates in singles and doubles. LucarioDex can also detect them from the screen.
+
+### Catching
+
+Catch odds are recalculated from current HP, status, species and ball. The recommended ball is the one with the best chance for its price, not simply the strongest ball. Conditional balls such as Repeat, Net, Nest, Dusk, Quick, Timer and Dream are considered when they help.
+
+The panel also estimates the number of throws and the total cost in Poké Yen. Consecutive catches of the same species build a chain, shown by a **Chain** badge; the Repeat Ball uses that count.
+
+### Areas and Pokédex
+
+The **Zone** panel lists the Pokémon that can appear in the current area, with encounter method, rarity, level range, EVs and hordes. It tracks which species you have already caught and which are still missing. When an area name exists in more than one region, a region selector appears.
+
+The Pokédex search opens a full page with base stats, types, abilities, height, weight, catch rate, gender, egg groups, tier, legendary status, evolutions, level-up moves, locations and sprite.
+
+### PvE guide
+
+The **PvE** panel collects four kinds of content:
+
+- **Rerun**: gym rematch strategies with team, turns, cost and income, safe and skipped gyms, an optimised travel route and a checklist.
+- **Story**: the five regions with eight badges each, level caps, gym leaders and tips. Badge progress is saved.
+- **Leagues**: Elite Four and champion for each region, cooldown, base and charm payout, preparations and counters. League clears are saved.
+- **Events**: Ho-Oh, Pumpking, Red and the Christmas routine, with facts, checklist, team, procedure and rewards. Seasonal details follow the current edition.
+
+All tabs also show community teams from BattGuide when available, with roster, notes and Pokepaste links. The full turn-by-turn guide remains on BattGuide; LucarioDex shows the team card and credits the authors.
+
+A strategy, league or event can be opened in the **Turn guide** with one button. PvE guide content is currently written in Italian; the interface follows the selected language.
+
+### Turn guide
+
+The **Guide** panel steps through a route one turn at a time. Use **Next** or `Ctrl + Shift + N`, go back with **Back**, and restart with **Reset**. If a route declares a roster, the panel narrows the possible opposing team as species appear. When turn reading is enabled, routes with turn markers advance by themselves.
+
+### Ditto Farm
+
+The **Ditto Farm** panel estimates damage against a normal Ditto and against a transformed Ditto, which copies your defences but keeps its HP. Enter your Pokémon, the move you use, and Ditto's level and HP. The panel warns when the move risks a knockout and suggests the best ball at full HP and at 1 HP with sleep. A capture counter keeps track of catches.
+
+### PvP and StratDex
+
+PvP mode replaces the PvE battle panel with four tabs:
+
+- **Team**: six slots with species, level, nature, item, ability, moves, IVs, EVs and boosts. Slots can be saved in boxes, reloaded, imported from Showdown sets or exported back to Showdown. Presets provide a starting point.
+- **Opponent**: the opposing set, even partial. Moves read from the screen remain until the Pokémon changes or the battle ends.
+- **Field**: weather, Trick Room, Reflect, Light Screen, Tailwind, Stealth Rock, Spikes and Toxic Spikes for both sides.
+- **Damage**: turn order, effective speed, damage ranges, remaining HP, accuracy, hits needed for a knockout and a combined row for your two best moves.
+
+StratDex adds community usage data from mmoshowdown.com: tiers, most-used moves and items, spreads, common teammates, an **Apply most-used set** action, and a **Speed benchmark** table for level 50. Usage data describes probabilities, not official ladder statistics.
+
+### Interface
+
+The interface is available in Italian and English. You can change theme and accent colour, overlay opacity, text scale, high contrast, background image, header visibility, always-on-top behaviour, position locking and game anchoring. While dragging, alignment guides appear and the overlay snaps to screen or game edges. Profiles store a complete layout, including Pokédex progress and panel settings. Global hotkeys and a notification-area menu provide quick access.
+
+### Updates
+
+The installed build checks GitHub for a newer release at startup and from the settings panel. If an update exists, it shows the release notes and offers **Update now** or **Skip**. Updating downloads the installer, verifies the file when the release provides a checksum, closes LucarioDex and starts the setup. Settings and personal data are preserved. A skipped version is remembered.
+
+## Privacy
+
+Settings, profiles, Pokédex progress, PvE progress and PvP teams are stored locally in `%APPDATA%\LucarioDex`. LucarioDex does not collect analytics, telemetry or game data. The only network request is the update check against GitHub, and it sends no information about your game or configuration.
+
+## Legal
+
+LucarioDex is an informational overlay. It reads the visible game window and its title to locate the game. It does not modify the PokeMMO client, inject code, read game memory, network traffic or game files, and it does not send inputs or automate gameplay. It is not a bot and not a cheat.
+
+Use of the software is at your own responsibility. Check the PokeMMO rules that apply to you. If the game interface changes, some readings may stop working until an update is released.
+
+LucarioDex is not affiliated with, endorsed by or sponsored by Nintendo, Creatures Inc., GAME FREAK, The Pokémon Company, PokeMMO, Pokémon Showdown, mmoshowdown or BattGuide. Pokémon and Pokémon character names are trademarks of their respective owners. PokeMMO, Showdown and BattGuide are mentioned only to describe compatibility and data sources.
+
+Data about Pokémon, moves and encounters comes from PokeMMO community projects and is adapted for PokeMMO. Usage data comes from mmoshowdown.com. Community teams and Pokepaste links belong to their authors and are credited in the app; the full BattGuide content is not copied into LucarioDex.
+
+The software is provided as is, without warranty of any kind. The authors are not liable for data loss, account restrictions or any other damage resulting from its use.
 
 ---
 
-## Due parole prima di iniziare
+# Guida in italiano
 
-LucarioDex nasce da un problema molto semplice: durante una cattura o una
-lotta non hai voglia di aprire il browser, cercare il Pokémon, controllare le
-debolezze, calcolare il danno e poi tornare al gioco. Così ho pensato a un
-pannello che resta sopra PokeMMO e ti dà quelle informazioni mentre giochi.
-
-Non tocca il client, non legge la memoria, non manda input al gioco e non fa
-nulla al posto tuo. Prende solo l'immagine della finestra di PokeMMO e la
-interpreta. Per questo i click possono passare tranquillamente al gioco: è un
-overlay, non un bot. Se ti interessa il lato "legale", ne parlo anche in fondo
-alla guida.
-
-In breve:
-
-- Pokédex completo con statistiche, tipi, abilità, evoluzioni e zone di cattura.
-- Efficacia, mosse lette a schermo, danno stimato, pericolo e calcolo cattura.
-- Pannello **Zona** con spawn, rarità, livelli, EV e specie già catturate.
-- **Guida turni** per palestre, Elite 4, farm e percorsi personalizzati.
-- **PvE** con rerun palestre, level cap e storia delle 5 regioni, leghe, Ho-Oh,
-  Red ed eventi stagionali.
-- **Ditto Farm** per non mandare KO Ditto prima della cattura.
-- **PvP** con squadra, avversario, campo, ordine di turno e stime di danno.
-- **StratDex**: set e mosse più usati, con benchmark di velocità per tier.
-- **Catena di catture** della stessa specie, usata dalle ball condizionali.
-- **Aggiornamenti integrati**, con download e verifica del file.
-- Interfaccia in italiano o inglese, temi, profili e scorciatoie configurabili.
-
-Questa guida è scritta per essere letta dall'inizio alla fine la prima volta,
-e poi consultata solo quando serve. Non serve configurarla in modo particolare:
-con le impostazioni di default funziona già.
-
----
-
-## Cosa ti serve
-
-- **Windows 10 o 11**.
-- **PokeMMO** avviato. Va bene sia in finestra sia in borderless.
-- Il file **`LucarioDex-Setup-1.0.exe`**.
-
-Non serve installare Python, OCR o altre librerie: dentro il setup c'è già
-tutto quello che serve.
-
----
+La versione 1.0 è la prima versione ufficiale, non più beta. Questa parte descrive installazione, uso e soluzione dei problemi in italiano. I nomi dei pulsanti corrispondono all'interfaccia italiana.
 
 ## Installazione
 
-1. Scarica **`LucarioDex-Setup-1.0.exe`** dalla pagina delle release:
-   [github.com/WolfHitech/LucarioDex/releases](https://github.com/WolfHitech/LucarioDex/releases).
-2. Apri il file. Se Windows mostra l'avviso di SmartScreen (editore non
-   riconosciuto), scegli **Ulteriori informazioni** e poi **Esegui comunque**.
-3. Segui il setup. L'installazione è per utente e non richiede permessi da
-   amministratore.
-4. Al termine trovi LucarioDex nel menu Start. La scorciatoia sul desktop è
-   opzionale.
+Scarica `LucarioDex-Setup-1.0.exe` dalla [pagina delle release](https://github.com/WolfHitech/LucarioDex/releases).
 
-Di default il programma si installa in `%LOCALAPPDATA%\LucarioDex`.
+Apri il file. Se Windows mostra l'avviso di SmartScreen, scegli **Ulteriori informazioni** e poi **Esegui comunque**. L'installazione è per utente, non richiede permessi da amministratore e installa il programma in `%LOCALAPPDATA%\LucarioDex`.
 
-Se vuoi disinstallarlo, usa **Impostazioni → App → LucarioDex → Disinstalla**.
-Le impostazioni e i dati personali restano nella cartella indicata più sotto:
-puoi cancellarli a mano se vuoi ripartire da zero.
+Al termine trovi LucarioDex nel menu Start. Il collegamento sul desktop è opzionale.
 
----
+Per disinstallarlo usa **Impostazioni → App → LucarioDex → Disinstalla**. Le impostazioni e i dati personali restano in `%APPDATA%\LucarioDex`; cancella quella cartella se vuoi rimuoverli.
 
-## Primo avvio, passo per passo
+## Primo avvio
 
-1. Apri **PokeMMO** e mettiti nella schermata che ti interessa (incontro,
-   battaglia, percorso).
-2. Avvia **LucarioDex**.
-3. L'overlay compare sopra il gioco. In basso vedi `Gioco: connesso` quando la
-   finestra di PokeMMO viene riconosciuta.
-4. Premi **Scansiona** per fare una lettura manuale, oppure attiva **Auto** per
-   la scansione automatica (lo trovi anche nelle impostazioni e nel menu della
-   tray). Dopo ogni lettura, la riga in fondo mostra l'ora dell'ultima
-   scansione.
-5. Quando hai finito di sistemare posizione e dimensioni, disattiva la
-   **modalità modifica** con `Ctrl + Alt + C`. Così i click passano al gioco
-   invece di fermarsi sull'overlay.
+1. Apri PokeMMO e mettiti nella schermata che vuoi leggere: un incontro, una battaglia o un percorso.
+2. Avvia LucarioDex. L'overlay compare sopra il gioco.
+3. In basso leggi `Gioco: connesso` quando la finestra di PokeMMO viene riconosciuta.
+4. Premi **Scansiona** per una lettura manuale, oppure attiva **Auto** per la scansione automatica.
+5. Sistema posizione e dimensioni, poi disattiva la modalità modifica con `Ctrl + Alt + C`.
 
-La prima volta comparirà un promemoria con le scorciatoie principali. Puoi
-ignorarlo: non blocca nulla.
+Mentre trascini l'overlay compaiono le guide di allineamento e, al rilascio, la finestra si aggancia ai bordi dello schermo o della finestra di gioco. Blocca la posizione con il lucchetto nella barra del titolo quando hai finito.
 
-> Consiglio pratico: lascia l'overlay in modalità modifica finché devi
-> spostarlo o ridimensionarlo. Mentre lo trascini compaiono le guide di
-> allineamento e, al rilascio, l'overlay si aggancia ai bordi dello schermo o
-> della finestra di gioco. Poi bloccalo con l'icona del lucchetto nella barra
-> del titolo e disattiva la modalità modifica. Da quel momento non lo sposti più
-> per sbaglio.
+Se avvii LucarioDex due volte, la seconda istanza riporta in primo piano la finestra già aperta.
 
-Se avvii LucarioDex due volte, la seconda istanza non apre una copia: riporta
-in primo piano la finestra già aperta.
+## Schermata principale
 
----
+La finestra contiene sempre le stesse zone:
 
-## La schermata principale
+- barra del titolo, con i pulsanti per compattare, bloccare la posizione e aprire le impostazioni;
+- barra di ricerca del Pokédex;
+- scheda del nemico, con nome, livello, PS, stato, tipi, velocità base e badge per Alpha, orde e secondo avversario;
+- quattro schede: **Efficacia**, **Mosse**, **Pericolo** e **Cattura**;
+- scheda **Il mio Pokémon**, con uno o due slot per le lotte in singolo e in doppio;
+- pulsanti **Scansiona** e **Auto**;
+- riga strumenti con **Zona**, **Guida**, **Ditto**, **PvP** e **PvE**;
+- riga di stato con connessione, versione, ora dell'ultima scansione e badge **Catena** quando è attiva.
 
-La finestra è divisa in poche zone, sempre le stesse:
+### Scheda Mosse
 
-- **Barra del titolo**: trascina da qui per spostare l'overlay. A destra hai i
-  pulsanti per compattare, bloccare la posizione e aprire le impostazioni.
-- **Barra di ricerca del Pokédex**: scrivi il nome di una specie e premi Invio.
-  Si apre la scheda completa senza uscire dall'overlay.
-- **Scheda Nemico**: nome, livello, PS, stato, tipi, velocità base e, se serve,
-  badge **Alpha**, orda o secondo avversario. Sotto trovi le schede rapide.
-- **Le quattro schede**:
-  - **Efficacia**: debolezze, resistenze e immunità del nemico.
-  - **Mosse**: le tue mosse lette a schermo, ordinate per danno stimato, con la
-    migliore in cima.
-  - **Pericolo**: quanto danno rischi di subire dai Pokémon avversari.
-  - **Cattura**: probabilità, ball consigliata, media dei lanci e costo
-    atteso in Poké Yen (₽).
-- **Il mio Pokémon**: la specie che stai usando, con livello, IV, EV e natura.
-  Puoi compilare anche un secondo slot per le lotte in doppio. Se attivi
-  **Rileva i miei Pokémon**, LucarioDex prova a compilarli da sola durante la
-  scansione. Puoi comunque sistemarli a mano.
-- **Pulsanti in basso**: **Scansiona**, **Auto** e la riga **Zona · Guida ·
-  Ditto · PvP · PvE**. I cinque pulsanti aprono i rispettivi pannelli e restano
-  evidenziati mentre sono aperti. Nella riga in fondo vedi lo stato della
-  connessione, la versione e l'ora dell'ultima scansione; cliccala per aprire
-  le impostazioni. Quando catturi più esemplari della stessa specie di fila
-  compare anche il badge **Catena**, che alimenta il bonus delle ball
-  condizionali come la Repeat Ball.
+La mossa in cima è quella con il danno medio più alto secondo i dati inseriti. Accanto compaiono la percentuale stimata sui PS del nemico e una barra colorata: verde per una situazione favorevole, gialla per una intermedia, rossa per un colpo pesante.
 
-### Come leggere la scheda Mosse
+I selettori di stadio vicino alle statistiche servono per danze e debuff. Se il nemico ha abbassato la difesa o tu hai potenziato l'attacco, aggiornali: la stima cambia.
 
-La mossa in cima è quella che, secondo i dati inseriti, fa più danno medio.
-Accanto vedi la percentuale stimata sui PS del nemico e una barra colorata:
-verde se sei messo bene, gialla se è una situazione intermedia, rossa se il
-colpo è pesante. Se non hai impostato il tuo Pokémon, il danno non può essere
-calcolato: in quel caso compila la scheda **Il mio Pokémon** (anche solo
-specie, livello e natura) e la stima compare subito.
+Se non hai compilato il tuo Pokémon, il danno non può essere calcolato. Bastano specie, livello e natura per ottenere una prima stima.
 
-I selettori di stadio (le frecce vicino alle statistiche) servono per tenere
-conto di danze e debuff. Se il nemico ha usato una mossa che gli abbassa la
-difesa, o tu hai potenziato l'attacco, aggiornali: il numero cambia di
-conseguenza.
+### Cattura
 
-### Cattura: perché cambia da sola
+La probabilità dipende da PS attuali, stato, specie e ball. La ball consigliata è quella con il miglior rapporto tra probabilità e costo. Le ball condizionali vengono considerate quando la situazione le rende convenienti.
 
-La probabilità dipende da PS attuali, stato, specie e ball scelta. Durante la
-lotta LucarioDex rilegge quei valori e ricalcola tutto. La ball consigliata è
-quella con il miglior rapporto tra probabilità e costo, non semplicemente la
-più forte. Le ball speciali (Repeat, Net, Nest, Dusk, Quick, Timer, Dream)
-vengono considerate quando la situazione le rende convenienti.
+Il pannello mostra anche i lanci stimati e il costo complessivo in Poké Yen. Se stai catturando la stessa specie di fila, il badge **Catena** mostra il conteggio e la Repeat Ball ne tiene conto.
 
-Accanto alla probabilità vedi anche la stima dei lanci necessari e il costo
-complessivo. Se hai una catena attiva della stessa specie, la Repeat Ball ne
-tiene conto: il badge **Catena** in fondo all'overlay mostra il conteggio. Se un
-numero non ti torna, controlla prima di tutto i PS e lo stato: sono loro a
-spostare di più la percentuale.
+## Scansione
 
----
+La scansione automatica legge lo schermo a intervalli regolari. È utile per gli incontri di fila, ma consuma più risorse quanto più è frequente.
 
-## Scansione automatica e lettura del turno
+- **Solo in battaglia** limita la scansione ai combattimenti e risparmia lavoro mentre cammini.
+- **Leggi turno (lento)** riconosce il numero di turno. Serve all'avanzamento automatico della Guida ed è l'opzione più pesante.
 
-La scansione automatica fa una lettura ogni pochi secondi. È comoda quando
-stai facendo incontri di fila, ma ha un costo: più spesso scansiona, più lavoro
-fa il computer. Il default è un compromesso ragionevole.
+Se la scansione non riconosce nulla, controlla che il gioco sia in primo piano, non minimizzato e non coperto da menu. Verifica anche che la modalità della finestra nelle impostazioni corrisponda a come stai giocando.
 
-Due opzioni che vale la pena conoscere:
+## Zona
 
-- **Solo in battaglia**: evita di scansionare mentre cammini. Utile se vuoi
-  risparmiare risorse e non ti interessa la lettura della zona.
-- **Leggi turno (lento)**: aggiunge il riconoscimento del numero di turno.
-  Serve alla Guida automatica, ma è più lento. Attivalo solo se ti serve
-  davvero.
+Il pannello **Zona** mostra la zona corrente e i Pokémon che vi compaiono, con metodo di incontro, rarità, livelli, EV e orde. Clicca una riga per segnarla come catturata: il contatore si aggiorna e resta salvato.
 
-Se la scansione non riconosce nulla, quasi sempre è perché il gioco è
-minimizzato, coperto da una finestra non prevista o in una risoluzione molto
-diversa da quella standard. Prova a mettere PokeMMO in primo piano e a
-rieseguire la scansione manuale. Quando il gioco è in schermo intero, usa la
-modalità corrispondente nelle impostazioni.
-
----
-
-## Zona: cosa può apparire dove sei
-
-Apri il pannello col pulsante **Zona** nella riga strumenti (oppure `Zona` dal
-menu della tray). Il pannello mostra la zona corrente e i Pokémon che vi
-compaiono, con:
-
-- metodo di incontro (erba, grotta, acqua, pesca, bottintesta, ombra, ecc.);
-- rarità, livelli minimi e massimi;
-- EV assegnati;
-- contatore di quelli già presi e specie che mancano in quella zona;
-- indicazione delle orde quando presenti.
-
-Clicca su una riga per segnarla come catturata: il contatore si aggiorna e
-resta salvato. Se lo stesso nome di zona esiste in più regioni, il **selettore
-di regione** in alto parte dalla prima e mostra una regione alla volta: scegli
-la tua per non mescolare aree diverse.
-
-La zona viene ricavata dal testo a schermo, quindi conviene fare la scansione
-quando il nome dell'area è visibile e non coperto da menu o finestre.
-
----
+La zona viene ricavata dal testo a schermo, quindi fai la scansione quando il nome dell'area è visibile. Se lo stesso nome esiste in più regioni, compare un selettore per scegliere quella giusta.
 
 ## Pokédex
 
-La barra di ricerca in alto apre la scheda di qualsiasi specie presente nei
-dati. Dentro trovi:
+La barra di ricerca apre la scheda di qualsiasi specie presente nei dati. La pagina mostra statistiche base e totale, tipi, abilità (compresa quella nascosta quando disponibile), altezza, peso, tasso di cattura, genere, gruppi uovo, tier, leggendari, evoluzioni, mosse per livello, zone di cattura e sprite.
 
-- statistiche base e totale;
-- tipi, abilità (compresa quella nascosta, dove disponibile);
-- altezza, peso, tasso di cattura, genere e gruppi uovo;
-- tier e indicazione di leggendario, dove previsto;
-- evoluzioni con il metodo richiesto;
-- mosse apprese per livello;
-- dove trovarla;
-- sprite (animato dove disponibile).
+Con **Indietro** torni al pannello precedente. Lo stato di visto e catturato viene ricordato e salvato nei profili.
 
-La scheda si apre sopra il pannello principale. Con **Indietro** torni a dove
-eri. Se una specie è già stata vista o catturata, lo stato viene ricordato e
-compare anche nei profili salvati.
+## Guida PvE
 
----
+Il pulsante **PvE** apre un pannello con quattro schede. Il contenuto delle guide è in italiano anche quando l'interfaccia è in inglese.
+
+### Rerun
+
+La scheda **Rerun** raccoglie strategie per rifare le palestre. Per ogni strategia trovi squadra, ruoli, mosse, oggetti, costo, guadagno stimato, turni, palestre sicure e palestre da saltare.
+
+Sotto trovi il percorso ottimizzato per regione e una checklist. La strategia può essere aperta nella **Guida** con il pulsante dedicato, così i turni diventano un percorso passo-passo.
+
+### Storia
+
+La scheda **Storia** copre Kanto, Johto, Hoenn, Sinnoh e Unova. Per ogni regione elenca gli otto badge con città, capopalestra, tipo, livello del Pokémon principale e consiglio, oltre ai limiti di livello progressivi.
+
+Spunta un badge per segnare il progresso. Il conteggio resta salvato e puoi azzerarlo con **Azzera**.
+
+### Leghe
+
+La scheda **Leghe** mostra per ogni regione i quattro membri dell'Elite Four e il campione, con tipo, Pokémon principale, livello, difficoltà, contromosse e consigli. In alto leggi cooldown e premio base o con charm.
+
+Anche qui puoi segnare i membri già battuti e aprire la lega nella **Guida** come percorso.
+
+### Eventi
+
+La scheda **Eventi** contiene Ho-Oh, Pumpking, Red e la routine di Natale. Ogni guida mostra scheda, checklist, squadra consigliata, procedura, ricompense e consigli. I dettagli stagionali seguono l'edizione corrente.
+
+Le checklist salvano il progresso. La procedura può essere aperta nella **Guida** quando sono presenti i passi.
+
+### Team della community
+
+In tutte le schede compare, quando disponibile, la card **Team della community** con roster, note e collegamenti Pokepaste. I team provengono da BattGuide e restano attribuiti ai rispettivi autori; la guida turno completa è su BattGuide, non dentro LucarioDex.
+
+La scelta del team viene ricordata per la scheda e la regione o evento corrispondente.
 
 ## Guida turni
 
-La Guida è un promemoria passo-passo per combattimenti scriptati: palestre,
-Elite 4, farm, Red o qualsiasi percorso tu voglia. Non decide per te e non
-preme nulla nel gioco.
+Il pannello **Guida** segue un percorso un turno alla volta. Usa **Avanti** o `Ctrl + Shift + N`, torna indietro con **Indietro** e riparti con **Azzera**.
 
-Come si usa:
+Se il percorso dichiara un roster, il pannello mostra il team avversario possibile e lo restringe man mano che le specie compaiono. Quando sono state viste tutte, scrive `Tutte le specie osservate`.
 
-1. Apri il pannello col pulsante **Guida** (o `Guida turni` dalla tray).
-2. Scegli un percorso dal menu a tendina.
-3. A ogni turno premi **Avanti**, oppure usa `Ctrl + Shift + N`.
-4. Se sbagli, **Indietro** torna al passo precedente; **Azzera** riparte
-   dall'inizio.
-
-Se il percorso dichiara un **roster**, il pannello mostra il team avversario
-possibile e lo restringe man mano che le specie compaiono. Quando sono state
-viste tutte, scrive `Tutte le specie osservate`.
-
-I percorsi inclusi sono pronti all'uso e vengono aggiornati con l'app. Se un
-percorso ha dei passi con il campo `turn`, la guida può avanzare da sola quando
-il turno letto a schermo raggiunge quel valore.
-
-> La Guida è pensata per essere letta, non per giocare al posto tuo. Se un
-> passo non scatta da solo, controlla che **Leggi turno** sia attivo e che il
-> numero di turno sia visibile a schermo.
-
----
-
-## PvE: rerun, storia, leghe ed eventi
-
-Il pannello **PvE** raccoglie le cose che servono dopo la storia, senza
-sostituire la Guida turni. Si apre dal pulsante **PvE** o dalla tray, e ha
-quattro schede:
-
-- **Rerun**: come funzionano i rematch (6v6 doppio, cooldown 18 ore, cinque
-  allenatori da battere per riattivare una palestra), checklist di partenza e
-  sei strategie della community: Double Typhlosion, Sun & Rain Duo, Prehistoric
-  5, 7 Hells, Tempest Explosion e 6 Pillars. Per ognuna vedi team, mosse,
-  passi, palestre sicure e palestre da saltare. Il pulsante **Apri nella Guida**
-  carica i passi nel pannello Guida turni, così puoi seguirli uno alla volta.
-  In fondo c'è il percorso ottimizzato regione per regione, con la coppia di
-  mosse consigliata per ogni palestra.
-- **Storia**: per ogni regione, gli 8 badge con capipalestra, tipo, level cap e
-  un consiglio concreto; in testa trovi la sequenza completa dei level cap.
-  Spunta un badge per segnare il progresso: il contatore in alto tiene il conto.
-- **Leghe**: Superquattro e Campione delle 5 regioni, con tipo, livello, livello
-  di difficoltà, contromosse e premio base/charm. Anche qui puoi spuntare i
-  membri battuti e aprire il piano nella Guida turni.
-- **Eventi**: Ho-Oh con requisiti, team Trick Room e sequenza a 10 turni;
-  Pumpking di Halloween con accesso, modalità Easy/Hard e piano per fasi; Red
-  con le tre varianti di team; il Natale con la routine dei Lost Presents,
-  swarm, raid e bonus shiny. Le checklist sono spuntabili e la procedura si
-  apre nella Guida turni.
-
-In tutte le schede Rerun, Leghe ed Eventi trovi anche i **Team della
-community**: rosa dei Pokémon, riassunto in italiano, link al pokepaste e a
-BattGuide per i turni completi. Il team scelto viene ricordato per ogni scheda
-e regione.
-
-I progressi, la scheda e la regione (o guida) scelta vengono salvati in
-`config.json` sotto la chiave `pve`, insieme alla posizione del pannello. I
-contenuti stanno in `data/pve_guide.json`: puoi aggiornarli senza toccare il
-codice.
-
-> I dati su palestre, leghe, boss ed eventi cambiano con le patch di PokeMMO.
-> LucarioDex li tiene in un file separato proprio per poterli correggere in
-> fretta: se un livello, una soglia o una strategia non torna, aggiorna il JSON.
-> Per Halloween e Natale fanno fede il changelog e il post ufficiale
-> dell'edizione in corso.
-
----
+Con **Leggi turno** attivo, i percorsi che hanno un numero di turno avanzano da soli quando la lettura raggiunge quel valore. Se un passo non scatta, controlla che il numero di turno sia visibile a schermo e che l'opzione sia attiva.
 
 ## Ditto Farm
 
-Il pannello **Ditto Farm** serve a non mandare KO Ditto prima di catturarlo.
-Si apre col pulsante **Ditto** o con `Ctrl + Shift + D`.
+Il pannello **Ditto Farm** aiuta a catturare Ditto senza mandarlo KO. Inserisci il Pokémon che usi, la mossa, il livello e i PS di Ditto.
 
-Cosa gli serve:
+Il pannello mostra il danno stimato su un Ditto normale e su un Ditto dopo **Transform**, che copia le tue difese ma mantiene i suoi PS. Ti avvisa se rischi il KO e suggerisce la ball migliore a PS pieni e a 1 PS con sonno. Il contatore **+1 cattura** tiene il conto delle prese.
 
-- il Pokémon che usi (specie, livello, IV, EV, natura);
-- la **mossa** che usi (per esempio False Swipe);
-- il **livello** e i **PS** di Ditto.
-
-In cambio ti mostra il danno stimato su un Ditto normale e su un Ditto dopo
-**Transform**, che difende come il tuo Pokémon ma mantiene i suoi PS. Il
-pannello ti avvisa se rischi il KO, ti suggerisce la ball migliore a PS pieni
-e a 1 PS con sonno, e tiene il conto delle catture con **+1 cattura**.
-
-La nota su False Swipe è volutamente esplicita: se la mossa non può mettere KO,
-il rischio scende quasi a zero. Se usi un attacco normale, a PS bassi il KO è
-dietro l'angolo. Le zone migliori per trovarlo sono elencate nello stesso
-pannello.
-
----
+False Swipe riduce quasi a zero il rischio di KO; un attacco normale a PS bassi può chiudere lo scontro prima della cattura.
 
 ## PvP
 
-La modalità PvP si attiva dal pulsante **PvP**. Sostituisce il pannello di
-analisi della lotta con quattro schede:
+Il pulsante **PvP** sostituisce il pannello PvE con quattro schede:
 
-- **Squadra**: i tuoi sei slot, con specie, livello, natura, oggetto, abilità,
-  mosse, IV/EV e boost. Puoi salvare gli slot nei **box**, ricaricarli,
-  eliminarli, importare o esportare un set in formato Showdown. I preset
-  aiutano a partire da un set sensato per la specie scelta.
-- **Avversario**: il set del Pokémon che hai davanti, anche parziale. Le mosse
-  lette a schermo restano compilate per tutta la battaglia: una lettura
-  incerta non le cancella. Cambiano solo quando cambi Pokémon o quando la
-  battaglia finisce, e il pannello si ridisegna solo se qualcosa è davvero
-  cambiato.
-- **Campo**: meteo, Trick Room, Riflesso, Schermo Luce, Venti Rapidi,
-  Stealth Rock, Spikes e Toxic Spikes, per entrambi i lati.
-- **Danno**: ordine di turno e velocità effettiva dei due Pokémon, poi i tuoi
-  attacchi e quelli avversari ordinati per danno. Ogni riga è colorata e
-  riempita in base alla percentuale: verde quando il colpo è forte a tuo
-  favore, rosso quando lo subisci. A destra leggi il danno, i **PS che
-  restano** al bersaglio (`resta 63%`), la precisione e il badge con i colpi
-  necessari al KO (OHKO, 2HKO…, oppure `61–92` se serve più di un turno).
-  L'ultima riga con **＋** somma le due mosse migliori. Gli effetti di entrata,
-  i residui e l'oggetto stanno in fondo; se mancano i dati, il pannello ti
-  porta direttamente alla scheda da compilare.
+- **Squadra**: sei slot con specie, livello, natura, oggetto, abilità, mosse, IV, EV e boost. Puoi salvare gli slot nei box, ricaricarli, eliminarli e importare o esportare set in formato Showdown. I preset offrono un punto di partenza.
+- **Avversario**: il set del Pokémon che hai davanti, anche parziale. Le mosse lette restano compilate finché non cambia il Pokémon o finisce la battaglia.
+- **Campo**: meteo, Trick Room, Riflesso, Schermo Luce, Venti Rapidi, Stealth Rock, Spikes e Toxic Spikes per entrambi i lati.
+- **Danno**: ordine di turno, velocità effettiva, danno, PS rimasti, precisione, colpi necessari al KO e riga combinata delle due mosse migliori.
 
-È uno strumento di supporto, non un calcolatore ufficiale: se un dato del set
-avversario è inventato, anche la stima lo sarà. Compila solo ciò che sai e
-lascia vuoto il resto.
+Le stime dipendono dai dati inseriti. Se il set avversario è incompleto, anche il risultato lo sarà.
 
-### StratDex: dati d'uso comuni
+### StratDex
 
-StratDex è **sempre attivo**: non c'è nessun interruttore da sbloccare. Integra
-i dati pubblici di [mmoshowdown.com](https://mmoshowdown.com/dex), raccolti dal
-client PokeMMO Showdown. Non sono dati ufficiali della ladder: vanno letti come
-**probabilità**, non come certezza.
+StratDex è attivo quando i dati inclusi sono validi. Mostra l'uso comune dei Pokémon nel tier scelto:
 
-Cosa aggiunge:
+- mosse più usate, oggetto, abilità, spread e compagni frequenti nella scheda **Avversario**;
+- set disponibili nel menu **Preset**;
+- **Benchmark velocità** nella scheda **Danno**, con velocità effettive a livello 50 e confronto con il tuo Pokémon.
 
-- nella scheda **Avversario**, il riquadro **Uso comune (StratDex)** con
-  selettore del tier, chip delle mosse più usate (il riempimento indica la
-  percentuale), **Applica set più usato**, oggetto, abilità, spread e compagni
-  frequenti;
-- nel menu **Preset** (squadra e avversario) i set disponibili per la specie,
-  ad esempio `Garchomp · OU`;
-- nella scheda **Danno**, il pulsante **Benchmark velocità**: tabella delle
-  velocità effettive a livello 50 nel tier scelto, con ricerca, spread più
-  usato e indicazione di chi è più veloce del tuo Pokémon attivo.
+I dati provengono da mmoshowdown.com e descrivono probabilità d'uso, non statistiche ufficiali della ladder.
 
-I set importati possono essere esportati in formato Showdown con il normale
-pulsante **Esporta set**, quindi finiscono nei box come qualsiasi altro set.
+## Impostazioni
 
-I dati sono inclusi nell'app e si aggiornano insieme a LucarioDex: non devi
-scaricare nulla a parte. Se in futuro vorrai personalizzarli, il file si chiama
-`meta.json` e si trova nella cartella dei dati utente (vedi **Dove stanno i
-file**); le modifiche vengono rilette automaticamente.
+Apri le impostazioni con l'ingranaggio o con `Ctrl + Alt + S`.
 
----
+**Aspetto** comprende opacità, intestazione, sempre in primo piano, modalità modifica, tema e colore accento, scansione automatica, **Solo in battaglia**, rilevamento dei tuoi Pokémon, blocco posizione, scala del testo, alto contrasto e sfondo personalizzato.
 
-## Aspetto e impostazioni
+**Gioco** comprende ancoraggio e posizione, modalità della finestra (finestra, borderless, schermo intero), lettura automatica o manuale e lingua.
 
-Apri le impostazioni con l'ingranaggio nella barra del titolo o con
-`Ctrl + Alt + S`.
+**Scorciatoie** permette di cambiare i tasti per overlay, modalità modifica, impostazioni e passo avanti della Guida.
 
-**Aspetto**
+**Profili** salva e richiama una configurazione completa: tema, posizione, dimensione, stato del Pokédex e impostazioni dei pannelli.
 
-- Opacità dell'overlay.
-- Mostra o nascondi l'intestazione.
-- Sempre in primo piano.
-- Modalità modifica (se è OFF, i click passano al gioco).
-- Tema scuro o chiaro e colore accento.
-- Scansione automatica e opzione **Solo in battaglia**.
-- Rilevamento automatico dei tuoi Pokémon.
-- Blocco della posizione.
-- Scala del testo e alto contrasto.
-- Sfondo personalizzato con una tua immagine.
-
-**Gioco**
-
-- Ancoraggio al gioco e posizione dell'ancoraggio (alto/basso,
-  sinistra/destra).
-- Modalità della finestra di gioco: finestra, borderless o schermo intero.
-- Lettura schermo automatica o manuale.
-- Lingua: italiano o inglese.
-
-**Scorciatoie**
-
-Puoi cambiare i tasti per mostrare/nascondere l'overlay, la modalità modifica,
-le impostazioni e il passo avanti della Guida. Clicca sul campo, premi la
-combinazione che vuoi e chiudi: viene salvata subito.
-
-**Profili**
-
-Salva una configurazione completa con un nome, richiamala quando serve ed
-eliminala se non ti serve più. Oltre a tema, posizione e dimensione, il
-profilo ricorda anche lo stato del Pokédex (visti e catturati) e le
-impostazioni dei pannelli. Utile se giochi su più personaggi o vuoi due layout
-diversi.
-
-**Aggiornamenti**
-
-Qui vedi la versione installata e il pulsante **Cerca aggiornamenti**. Il
-controllo parte anche da solo all'avvio, in background.
-
----
+**Aggiornamenti** mostra la versione installata e il pulsante **Cerca aggiornamenti**.
 
 ## Aggiornamenti
 
-Il controllo parte all'avvio, prima che la finestra si apra: l'overlay non
-viene caricato finché non rispondi. Se c'è una versione più recente,
-LucarioDex mostra le note e due scelte:
+La versione installata controlla GitHub all'avvio e dal pannello delle impostazioni. Se trova una versione più recente, mostra le novità e due scelte:
 
-- **Aggiorna ora**: scarica l'installer, lo verifica se la release fornisce un
-  checksum SHA-256, chiude LucarioDex e avvia il setup. Le impostazioni e i
-  dati personali restano al loro posto.
-- **Salta (non consigliato)**: avvia la versione attuale e ricorda quella
-  scelta, così non viene riproposto lo stesso avviso a ogni avvio.
+- **Aggiorna ora** scarica il programma di installazione, verifica il file quando la release fornisce un controllo di integrità, chiude LucarioDex e avvia l'installazione. Impostazioni e dati personali restano.
+- **Salta (non consigliato)** avvia la versione attuale e ricorda la scelta, così lo stesso avviso non compare a ogni avvio.
 
-Se il controllo non riesce (per esempio senza rete), l'app continua a
-funzionare normalmente.
+Se il controllo non riesce, per esempio senza connessione, il programma si avvia normalmente.
 
-Il controllo aggiornamenti è l'unica connessione di rete di LucarioDex. Non
-invia dati d'uso, statistiche o contenuti del gioco: contatta solo l'API
-pubblica di GitHub per leggere l'ultima release.
+## Scorciatoie
 
----
+- `Ctrl + Alt + H`: mostra o nasconde l'overlay.
+- `Ctrl + Alt + C`: attiva o disattiva la modalità modifica.
+- `Ctrl + Alt + S`: apre le impostazioni.
+- `Ctrl + Shift + N`: passo successivo nella Guida.
+- `Ctrl + Shift + D`: apre o chiude Ditto Farm.
 
-## Pubblicare una nuova versione
+Le prime quattro si possono cambiare dalle impostazioni. `Ctrl + Shift + D` è la scorciatoia predefinita di Ditto Farm e non compare tra quelle modificabili.
 
-Le release si pubblicano da GitHub CLI: l'upload dal sito si ferma a 25 MB,
-mentre l'installer è di circa 100 MB (il limite degli allegati di una release è
-invece 2 GB). Dalla cartella del progetto:
+## Icona nell'area di notifica
 
-```powershell
-powershell -ExecutionPolicy Bypass -File tools\publish_release.ps1 -Version 1.0
-```
+Il menu dell'area di notifica contiene **Scansiona**, **Impostazioni**, **Zona**, **Guida turni**, **Ditto Farm**, **PvE**, **Modalità modifica**, **Leggi turno**, **Scansione automatica** ed **Esci**.
 
-Lo script crea il tag `v1.0` (o riusa quello esistente), carica
-`dist\LucarioDex-Setup-1.0.exe` con il relativo file `.sha256` e stampa
-l'indirizzo della release. Senza `-Version` usa la 1.0.
+La X chiude il programma e salva le impostazioni. Per nascondere solo l'overlay usa `Ctrl + Alt + H` o la modalità compatta. Il pannello PvP si apre dal pulsante **PvP** nell'overlay.
 
-L'aggiornamento automatico scatta solo quando il tag della release è più
-recente della versione installata: ripubblicare la stessa versione non avvisa
-nessuno.
+## Dati, backup e log
 
----
-
-## Scorciatoie predefinite
-
-| Scorciatoia        | Azione                              |
-|--------------------|-------------------------------------|
-| `Ctrl + Alt + H`   | Mostra / nascondi l'overlay         |
-| `Ctrl + Alt + C`   | Modalità modifica ON/OFF            |
-| `Ctrl + Alt + S`   | Apri le impostazioni                |
-| `Ctrl + Shift + N` | Guida: passo successivo             |
-| `Ctrl + Shift + D` | Ditto Farm: mostra / nascondi       |
-
-Le prime quattro sono modificabili dalle impostazioni. `Ctrl + Shift + D` è il
-default del pannello Ditto.
-
----
-
-## Icona nella tray
-
-LucarioDex resta anche nell'area di notifica. Con il tasto destro trovi:
-
-- **Scansiona**;
-- **Impostazioni**;
-- **Zona**, **Guida turni**, **Ditto Farm**;
-- **Modalità modifica**;
-- **Leggi turno (lento)**;
-- **Scansione automatica**;
-- **Esci**.
-
-La X chiude l'app e salva le impostazioni. Se vuoi solo togliere l'overlay
-dalla vista, usa `Ctrl + Alt + H` o l'opzione compatta. Per terminare tutto
-dalla tray c'è comunque **Esci**. Il pannello PvP si apre dal pulsante
-**PvP** nell'overlay.
-
----
-
-## Dove stanno i file
-
-Configurazione e dati personali stanno in:
+Impostazioni, profili, progressi del Pokédex e del PvE e squadre PvP stanno in:
 
 ```text
 %APPDATA%\LucarioDex
 ```
 
-Qui trovi:
+Per un backup copia questa cartella. Per ripartire da zero cancellala: il programma la ricrea al successivo avvio.
 
-| File | Contenuto |
-| --- | --- |
-| `config.json` | impostazioni, profili, squadre PvP, stato dei pannelli |
-| `dex_state.json` | Pokémon visti e catturati |
-| `routes_user.json` | i tuoi percorsi della Guida |
-| `meta.json` | dati d'uso StratDex |
-
-Se vuoi fare un backup o ripartire da zero, copia o cancella questa cartella.
-Il programma la ricrea al successivo avvio.
-
-Il file di log degli errori viene scritto in:
+Il log degli errori viene scritto in:
 
 ```text
 %TEMP%\LucarioDex_error.log
 ```
 
-Se l'app si chiude da sola, quello è il primo posto da guardare.
+Se il programma si chiude da solo, allega quel file quando chiedi assistenza.
 
-Le aree lette per il pannello Zona finiscono in `%TEMP%\LucarioDex_zone.log`
-(una riga per ogni cambio di zona).
-
----
-
-## Se qualcosa non funziona
+## Problemi comuni
 
 **L'overlay dice `Gioco: assente`.**
-PokeMMO non è aperto, è minimizzato o il titolo della finestra non viene
-riconosciuto. Metti il gioco in primo piano e premi di nuovo **Scansiona**.
+PokeMMO non è aperto, è minimizzato o il titolo della finestra non viene riconosciuto. Metti il gioco in primo piano e premi **Scansiona**.
 
 **Non riconosce il Pokémon.**
-Prova una scansione manuale con il gioco in primo piano. Se il problema resta,
-controlla che la risoluzione non sia troppo diversa da quella standard e che
-non ci siano menu aperti sopra la barra dei PS o il nome.
+Fai una scansione manuale con il gioco in primo piano. Controlla che la risoluzione non sia troppo diversa da quella standard e che menu o finestre non coprano nome e barra dei PS.
 
-**La modalità modifica è attiva e non riesco a cliccare il gioco.**
-Premi `Ctrl + Alt + C` oppure disattivala dalle impostazioni o dalla tray. In
-modalità modifica i click restano sull'overlay: è voluto, serve per spostarlo e
-ridimensionarlo.
+**Non riesco a cliccare il gioco.**
+La modalità modifica è attiva. Premi `Ctrl + Alt + C` o disattivala dalle impostazioni o dalla tray.
 
 **La scansione automatica è lenta.**
-Attiva **Solo in battaglia** se non ti serve la lettura della zona, oppure
-passa alla scansione manuale. Se hai attivato **Leggi turno**, tienilo conto:
-è l'opzione più pesante.
+Attiva **Solo in battaglia** se non ti serve la lettura della zona, oppure usa la scansione manuale. Se hai attivato **Leggi turno**, tienilo presente.
 
-**I numeri di danno non tornano.**
-Controlla specie, livello, natura, IV/EV e i selettori di stadio. Una natura
-sbagliata o un boost non aggiornato sposta parecchio la stima.
+**I danni non tornano.**
+Controlla specie, livello, natura, IV, EV e selettori di stadio. Una natura sbagliata o un boost non aggiornato cambia molto la stima.
 
 **Ho cambiato risoluzione o monitor.**
-Riposiziona l'overlay, poi ribloccalo. Se usi l'ancoraggio al gioco, verifica
-che la modalità (finestra, borderless, schermo intero) corrisponda a come stai
-giocando.
+Riposiziona l'overlay e bloccalo di nuovo. Se usi l'ancoraggio, verifica che la modalità della finestra corrisponda al gioco.
 
-**StratDex non compare.**
-Controlla che il file `meta.json` esista e sia valido. Se il file è rotto, la
-scheda continua a mostrare l'ultima versione valida e segnala l'errore nel piè
-di pagina. Cancellando il file torni ai dati inclusi.
+**La Guida non avanza da sola.**
+Attiva **Leggi turno** e assicurati che il numero di turno sia visibile. I percorsi senza turni si avanzano con **Avanti**.
+
+**StratDex o la Guida PvE non mostrano dati.**
+Installa l'ultima versione. Se il problema resta, scrivi nel canale di feedback indicando la versione e la parte che manca.
 
 **L'aggiornamento non parte.**
-Controlla la connessione e riprova con **Cerca aggiornamenti**. Se serve,
-scarica l'installer dalla pagina delle release. Se la release fornisce un
-checksum e il file scaricato non coincide, il download viene annullato per
-sicurezza.
+Controlla la connessione e riprova con **Cerca aggiornamenti**. Se il download non supera la verifica di integrità, viene annullato. Puoi sempre scaricare il programma di installazione dalla pagina delle release.
 
-**Nel pannello Zona compare un metodo che non c'entra.**
-Apri `%TEMP%\LucarioDex_zone.log`: per ogni cambio di area trovi il testo letto
-dallo schermo, il nome usato per cercare i dati, le regioni e i metodi trovati.
-Se il nome dell'area è giusto ma il metodo no, il problema è nei dati; se il
-nome è sbagliato, l'OCR ha letto un'altra area.
+**Il programma non parte.**
+Apri `%TEMP%\LucarioDex_error.log` e allega il file quando chiedi assistenza.
 
-**L'app si chiude o non parte.**
-Apri `%TEMP%\LucarioDex_error.log` e allega il file quando scrivi per assistenza.
+## Note legali
 
----
+LucarioDex è un overlay informativo. Legge la finestra visibile del gioco e il suo titolo per individuarla. Non modifica il client di PokeMMO, non inietta codice, non legge memoria, traffico di rete o file di gioco e non invia input né automatizza azioni. Non è un bot e non è un cheat.
+
+L'uso è a tuo rischio. Verifica le regole di PokeMMO che ti riguardano. Se l'interfaccia del gioco cambia, alcune letture possono smettere di funzionare fino a un aggiornamento.
+
+LucarioDex non è affiliato, approvato o sponsorizzato da Nintendo, Creatures Inc., GAME FREAK, The Pokémon Company, PokeMMO, Pokémon Showdown, mmoshowdown o BattGuide. Pokémon e i nomi dei personaggi sono marchi dei rispettivi proprietari. PokeMMO, Showdown e BattGuide sono citati solo per descrivere compatibilità e fonti dei dati.
+
+I dati su Pokémon, mosse e incontri provengono da progetti della community PokeMMO e sono adattati a PokeMMO. I dati d'uso provengono da mmoshowdown.com. I team della community e i collegamenti Pokepaste appartengono ai rispettivi autori e sono attribuiti nell'app; il contenuto completo di BattGuide non viene copiato in LucarioDex.
+
+Il software viene fornito così com'è, senza garanzie. Gli autori non rispondono di perdita di dati, restrizioni sull'account o altri danni derivanti dall'uso.
 
 ## Feedback
 
-I casi strani emergono giocando, non nei test. Se qualcosa non torna, cerca di
-includere:
-
-- cosa stavi facendo e cosa ti aspettavi;
-- uno screenshot dell'overlay e del gioco nello stesso momento;
-- zona e Pokémon coinvolti;
-- la versione che vedi in basso nell'app.
+Per segnalare un problema indica cosa stavi facendo, cosa ti aspettavi, la zona e il Pokémon coinvolti e la versione che leggi in basso nell'app. Allega uno screenshot dell'overlay e del gioco nello stesso momento e, se c'è stato un errore, il file `%TEMP%\LucarioDex_error.log`.
 
 Canale ufficiale: `t.me/lndefinizione`
 
-Se il problema è un errore, allega anche `%TEMP%\LucarioDex_error.log`: fa
-risparmiare un sacco di domande.
-
 ---
 
-## Crediti
-
-- Dati di gioco: datamine e progetti della community PokeMMO, verificati e
-  adattati per PokeMMO.
-- Dati d'uso StratDex: [mmoshowdown.com](https://mmoshowdown.com/dex) —
-  client PokeMMO Showdown.
-- LucarioDex non è affiliato a PokeMMO, Showdown o mmoshowdown.
-
----
-
-## Legal
-
-LucarioDex è un **overlay puramente informativo**. Non modifica il client di
-PokeMMO, non inietta codice, non legge memoria, socket o file di gioco e non
-automatizza azioni. Analizza soltanto l'immagine della finestra di gioco. Non è
-un bot e non è un cheat.
-
-L'uso resta a responsabilità dell'utente. Se PokeMMO cambia interfaccia o
-regole, alcune letture potrebbero smettere di funzionare: in quel caso meglio
-aspettare un aggiornamento che forzare il programma.
-
-<p align="center">
-  <sub>v1.0 · documentazione aggiornata il 1 novembre 2026 · made by @WolfHitech · grazie per giocare e testare assieme a me.</sub>
-</p>
+Versione 1.0 · novembre 2026 · creato da @WolfHitech
