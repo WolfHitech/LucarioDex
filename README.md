@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="assets/banner.png" alt="LucarioDex — BETA" width="100%">
+  <img src="assets/banner.png" alt="LucarioDex" width="100%">
 </p>
 
 <h1 align="center">LucarioDex</h1>
-<p align="center"><b>Overlay informativo per PokeMMO · Beta v0.1.7</b></p>
+<p align="center"><b>Overlay informativo per PokeMMO · v1.0</b></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/versione-0.1.7-red" alt="versione">
-  <img src="https://img.shields.io/badge/stato-beta-orange" alt="stato">
+  <img src="https://img.shields.io/badge/versione-1.0-red" alt="versione">
+  <img src="https://img.shields.io/badge/stato-stabile-brightgreen" alt="stato">
   <img src="https://img.shields.io/badge/gioco-PokeMMO-purple" alt="gioco">
   <img src="https://img.shields.io/badge/piattaforma-Windows%2010%2F11-blue" alt="piattaforma">
 </p>
@@ -33,7 +33,8 @@ In breve:
 - Efficacia, mosse lette a schermo, danno stimato, pericolo e calcolo cattura.
 - Pannello **Zona** con spawn, rarità, livelli, EV e specie già catturate.
 - **Guida turni** per palestre, Elite 4, farm e percorsi personalizzati.
-- **PvE** con rerun palestre, level cap e storia delle 5 regioni, leghe, Ho-Oh e eventi stagionali.
+- **PvE** con rerun palestre, level cap e storia delle 5 regioni, leghe, Ho-Oh,
+  Red ed eventi stagionali.
 - **Ditto Farm** per non mandare KO Ditto prima della cattura.
 - **PvP** con squadra, avversario, campo, ordine di turno e stime di danno.
 - **StratDex**: set e mosse più usati, con benchmark di velocità per tier.
@@ -51,7 +52,7 @@ con le impostazioni di default funziona già.
 
 - **Windows 10 o 11**.
 - **PokeMMO** avviato. Va bene sia in finestra sia in borderless.
-- Il file **`LucarioDex-Setup-0.1.7.exe`**.
+- Il file **`LucarioDex-Setup-1.0.exe`**.
 
 Non serve installare Python, OCR o altre librerie: dentro il setup c'è già
 tutto quello che serve.
@@ -60,7 +61,7 @@ tutto quello che serve.
 
 ## Installazione
 
-1. Scarica **`LucarioDex-Setup-0.1.7.exe`** dalla pagina delle release:
+1. Scarica **`LucarioDex-Setup-1.0.exe`** dalla pagina delle release:
    [github.com/WolfHitech/LucarioDex/releases](https://github.com/WolfHitech/LucarioDex/releases).
 2. Apri il file. Se Windows mostra l'avviso di SmartScreen (editore non
    riconosciuto), scegli **Ulteriori informazioni** e poi **Esegui comunque**.
@@ -201,9 +202,9 @@ compaiono, con:
 - indicazione delle orde quando presenti.
 
 Clicca su una riga per segnarla come catturata: il contatore si aggiorna e
-resta salvato. Se lo stesso nome di zona esiste in più regioni, usa il
-**selettore di regione** in alto per filtrare la lista. Se non vuoi filtrare,
-lascia **Tutte le regioni**.
+resta salvato. Se lo stesso nome di zona esiste in più regioni, il **selettore
+di regione** in alto parte dalla prima e mostra una regione alla volta: scegli
+la tua per non mescolare aree diverse.
 
 La zona viene ricavata dal testo a schermo, quindi conviene fare la scansione
 quando il nome dell'area è visibile e non coperto da menu o finestre.
@@ -279,9 +280,26 @@ quattro schede:
   di difficoltà, contromosse e premio base/charm. Anche qui puoi spuntare i
   membri battuti e aprire il piano nella Guida turni.
 - **Eventi**: Ho-Oh con requisiti, team Trick Room e sequenza a 10 turni;
-  Pumpking di Halloween con accesso, modalità Easy/Hard e piano per fasi; il
-  Natale con la routine dei Lost Presents, swarm, raid e bonus shiny. Le
-  checklist sono spuntabili e la procedura si apre nella Guida turni.
+  Pumpking di Halloween con accesso, modalità Easy/Hard e piano per fasi; Red
+  con le tre varianti di team; il Natale con la routine dei Lost Presents,
+  swarm, raid e bonus shiny. Le checklist sono spuntabili e la procedura si
+  apre nella Guida turni.
+
+In tutte le schede Rerun, Leghe ed Eventi trovi anche i **Team della
+community**: rosa dei Pokémon, riassunto in italiano, link al pokepaste e a
+BattGuide per i turni completi. Il team scelto viene ricordato per ogni scheda
+e regione.
+
+I progressi, la scheda e la regione (o guida) scelta vengono salvati in
+`config.json` sotto la chiave `pve`, insieme alla posizione del pannello. I
+contenuti stanno in `data/pve_guide.json`: puoi aggiornarli senza toccare il
+codice.
+
+> I dati su palestre, leghe, boss ed eventi cambiano con le patch di PokeMMO.
+> LucarioDex li tiene in un file separato proprio per poterli correggere in
+> fretta: se un livello, una soglia o una strategia non torna, aggiorna il JSON.
+> Per Halloween e Natale fanno fede il changelog e il post ufficiale
+> dell'edizione in corso.
 
 ---
 
@@ -442,12 +460,12 @@ mentre l'installer è di circa 100 MB (il limite degli allegati di una release �
 invece 2 GB). Dalla cartella del progetto:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File tools\publish_release.ps1 -Version 0.1.7
+powershell -ExecutionPolicy Bypass -File tools\publish_release.ps1 -Version 1.0
 ```
 
-Lo script crea il tag `v0.1.7` (o riusa quello esistente), carica
-`dist\LucarioDex-Setup-0.1.7.exe` con il relativo file `.sha256` e stampa
-l'indirizzo della release. Senza `-Version` usa la 0.1.7.
+Lo script crea il tag `v1.0` (o riusa quello esistente), carica
+`dist\LucarioDex-Setup-1.0.exe` con il relativo file `.sha256` e stampa
+l'indirizzo della release. Senza `-Version` usa la 1.0.
 
 L'aggiornamento automatico scatta solo quando il tag della release è più
 recente della versione installata: ripubblicare la stessa versione non avvisa
@@ -517,6 +535,9 @@ Il file di log degli errori viene scritto in:
 
 Se l'app si chiude da sola, quello è il primo posto da guardare.
 
+Le aree lette per il pannello Zona finiscono in `%TEMP%\LucarioDex_zone.log`
+(una riga per ogni cambio di zona).
+
 ---
 
 ## Se qualcosa non funziona
@@ -560,6 +581,12 @@ scarica l'installer dalla pagina delle release. Se la release fornisce un
 checksum e il file scaricato non coincide, il download viene annullato per
 sicurezza.
 
+**Nel pannello Zona compare un metodo che non c'entra.**
+Apri `%TEMP%\LucarioDex_zone.log`: per ogni cambio di area trovi il testo letto
+dallo schermo, il nome usato per cercare i dati, le regioni e i metodi trovati.
+Se il nome dell'area è giusto ma il metodo no, il problema è nei dati; se il
+nome è sbagliato, l'OCR ha letto un'altra area.
+
 **L'app si chiude o non parte.**
 Apri `%TEMP%\LucarioDex_error.log` e allega il file quando scrivi per assistenza.
 
@@ -567,7 +594,7 @@ Apri `%TEMP%\LucarioDex_error.log` e allega il file quando scrivi per assistenza
 
 ## Feedback
 
-La beta serve proprio a trovare i casi strani. Se segnali qualcosa, cerca di
+I casi strani emergono giocando, non nei test. Se qualcosa non torna, cerca di
 includere:
 
 - cosa stavi facendo e cosa ti aspettavi;
@@ -588,7 +615,7 @@ risparmiare un sacco di domande.
   adattati per PokeMMO.
 - Dati d'uso StratDex: [mmoshowdown.com](https://mmoshowdown.com/dex) —
   client PokeMMO Showdown.
-- LucarioDex non è affiliato a PokeMMO.
+- LucarioDex non è affiliato a PokeMMO, Showdown o mmoshowdown.
 
 ---
 
@@ -604,5 +631,5 @@ regole, alcune letture potrebbero smettere di funzionare: in quel caso meglio
 aspettare un aggiornamento che forzare il programma.
 
 <p align="center">
-  <sub>Beta v0.1.7 · documentazione aggiornata il 29 ottobre 2026 · made by @WolfHitech · grazie per giocare e testare assieme a me.</sub>
+  <sub>v1.0 · documentazione aggiornata il 1 novembre 2026 · made by @WolfHitech · grazie per giocare e testare assieme a me.</sub>
 </p>
