@@ -1,17 +1,8 @@
-<p align="center">
-  <img src="assets/banner.png" alt="LucarioDex" width="100%">
-</p>
+# LucarioDex 1.1
 
-<h1 align="center">LucarioDex</h1>
-<p align="center"><b>Informative overlay for PokeMMO · v1.0</b></p>
+LucarioDex is a Windows overlay for PokeMMO. It reads the game image while you play and shows battle information, catch odds, area spawns, Pokédex pages, PvE guides and PvP calculations in a panel that stays above the game.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/versione-1.0-red" alt="versione">
-  <img src="https://img.shields.io/badge/stato-stabile-brightgreen" alt="stato">
-  <img src="https://img.shields.io/badge/gioco-PokeMMO-purple" alt="gioco">
-  <img src="https://img.shields.io/badge/piattaforma-Windows%2010%2F11-blue" alt="piattaforma">
-</p>
-Version 1.0 is the first non-beta release.
+Version 1.1 fixes the shortcut that shows and hides the overlay.
 
 LucarioDex keeps the information you need on screen, without opening a browser, checking a wiki or moving to another monitor. It is informational only: it does not play the game, click for you, send inputs or automate any action.
 
@@ -23,7 +14,7 @@ LucarioDex keeps the information you need on screen, without opening a browser, 
 
 ## Installation
 
-Download `LucarioDex-Setup-1.0.exe` from the [releases page](https://github.com/WolfHitech/LucarioDex/releases).
+Download `LucarioDex-Setup-1.1.exe` from the [releases page](https://github.com/WolfHitech/LucarioDex/releases).
 
 Run the installer. If Windows SmartScreen warns about an unknown publisher, choose **More info** and then **Run anyway**. The installation is per user, does not require administrator rights and places the program in `%LOCALAPPDATA%\LucarioDex`.
 
@@ -121,11 +112,11 @@ The software is provided as is, without warranty of any kind. The authors are no
 
 # Guida in italiano
 
-La versione 1.0 è la prima versione ufficiale, non più beta. Questa parte descrive installazione, uso e soluzione dei problemi in italiano. I nomi dei pulsanti corrispondono all'interfaccia italiana.
+La versione 1.1 corregge la scorciatoia che mostra e nasconde l'overlay. Questa parte descrive installazione, uso e soluzione dei problemi in italiano. I nomi dei pulsanti corrispondono all'interfaccia italiana.
 
 ## Installazione
 
-Scarica `LucarioDex-Setup-1.0.exe` dalla [pagina delle release](https://github.com/WolfHitech/LucarioDex/releases).
+Scarica `LucarioDex-Setup-1.1.exe` dalla [pagina delle release](https://github.com/WolfHitech/LucarioDex/releases).
 
 Apri il file. Se Windows mostra l'avviso di SmartScreen, scegli **Ulteriori informazioni** e poi **Esegui comunque**. L'installazione è per utente, non richiede permessi da amministratore e installa il programma in `%LOCALAPPDATA%\LucarioDex`.
 
@@ -373,4 +364,4 @@ Canale ufficiale: `t.me/lndefinizione`
 
 ---
 
-Versione 1.0 · novembre 2026 · creato da @WolfHitech
+Versione 1.1 · novembre 2026 · creato da @WolfHitech
