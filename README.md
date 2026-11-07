@@ -3,10 +3,10 @@
 </p>
 
 <h1 align="center">LucarioDex</h1>
-<p align="center"><b>Informative overlay for PokeMMO · v1.1</b></p>
+<p align="center"><b>Informative overlay for PokeMMO · v1.2</b></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/versione-1.0-red" alt="versione">
+  <img src="https://img.shields.io/badge/versione-1.2-red" alt="versione">
   <img src="https://img.shields.io/badge/stato-stabile-brightgreen" alt="stato">
   <img src="https://img.shields.io/badge/gioco-PokeMMO-purple" alt="gioco">
   <img src="https://img.shields.io/badge/piattaforma-Windows%2010%2F11-blue" alt="piattaforma">
@@ -22,7 +22,7 @@ LucarioDex keeps the information you need on screen, without opening a browser, 
 
 ## Installation
 
-Download `LucarioDex-Setup-1.1.exe` from the [releases page](https://github.com/WolfHitech/LucarioDex/releases).
+Download `LucarioDex-Setup-1.2.exe` from the [releases page](https://github.com/WolfHitech/LucarioDex/releases).
 
 Run the installer. If Windows SmartScreen warns about an unknown publisher, choose **More info** and then **Run anyway**. The installation is per user, does not require administrator rights and places the program in `%LOCALAPPDATA%\LucarioDex`.
 
@@ -85,7 +85,7 @@ The **Ditto Farm** panel estimates damage against a normal Ditto and against a t
 
 PvP mode replaces the PvE battle panel with four tabs:
 
-- **Team**: six slots with species, level, nature, item, ability, moves, IVs, EVs and boosts. Slots can be saved in boxes, reloaded, imported from Showdown sets or exported back to Showdown. Presets provide a starting point.
+- **Team**: six slots with species, level, nature, item, ability, moves, IVs, EVs and boosts. Slots can be saved in boxes, reloaded, imported from Showdown sets or exported back to Showdown. Presets provide a starting point. A coverage line lists the attacking types the team cannot hit super-effectively and any weakness shared by two or more members.
 - **Opponent**: the opposing set, even partial. Moves read from the screen remain until the Pokémon changes or the battle ends.
 - **Field**: weather, Trick Room, Reflect, Light Screen, Tailwind, Stealth Rock, Spikes and Toxic Spikes for both sides.
 - **Damage**: turn order, effective speed, damage ranges, remaining HP, accuracy, hits needed for a knockout and a combined row for your two best moves.
@@ -116,13 +116,27 @@ Data about Pokémon, moves and encounters comes from PokeMMO community projects 
 
 The software is provided as is, without warranty of any kind. The authors are not liable for data loss, account restrictions or any other damage resulting from its use.
 
+## Changelog
+
+### 1.2
+
+- The Team tab in PvP shows a coverage line: the attacking types no move hits super-effectively and the weaknesses shared by two or more members.
+
+### 1.1
+
+- Fixed the hotkey that shows and hides the overlay.
+
+### 1.0
+
+- First stable release. The update check runs at startup, before the window opens, with the release notes and a progress bar.
+
 ---
 
 # Guida in italiano
 
 ## Installazione
 
-Scarica `LucarioDex-Setup-1.1.exe` dalla [pagina delle release](https://github.com/WolfHitech/LucarioDex/releases).
+Scarica `LucarioDex-Setup-1.2.exe` dalla [pagina delle release](https://github.com/WolfHitech/LucarioDex/releases).
 
 Apri il file. Se Windows mostra l'avviso di SmartScreen, scegli **Ulteriori informazioni** e poi **Esegui comunque**. L'installazione è per utente, non richiede permessi da amministratore e installa il programma in `%LOCALAPPDATA%\LucarioDex`.
 
@@ -244,7 +258,7 @@ False Swipe riduce quasi a zero il rischio di KO; un attacco normale a PS bassi 
 
 Il pulsante **PvP** sostituisce il pannello PvE con quattro schede:
 
-- **Squadra**: sei slot con specie, livello, natura, oggetto, abilità, mosse, IV, EV e boost. Puoi salvare gli slot nei box, ricaricarli, eliminarli e importare o esportare set in formato Showdown. I preset offrono un punto di partenza.
+- **Squadra**: sei slot con specie, livello, natura, oggetto, abilità, mosse, IV, EV e boost. Puoi salvare gli slot nei box, ricaricarli, eliminarli e importare o esportare set in formato Showdown. I preset offrono un punto di partenza. Una riga di copertura elenca i tipi che il team non colpisce in modo superefficace e le debolezze condivise da due o più membri.
 - **Avversario**: il set del Pokémon che hai davanti, anche parziale. Le mosse lette restano compilate finché non cambia il Pokémon o finisce la battaglia.
 - **Campo**: meteo, Trick Room, Riflesso, Schermo Luce, Venti Rapidi, Stealth Rock, Spikes e Toxic Spikes per entrambi i lati.
 - **Danno**: ordine di turno, velocità effettiva, danno, PS rimasti, precisione, colpi necessari al KO e riga combinata delle due mosse migliori.
@@ -368,6 +382,20 @@ Per segnalare un problema indica cosa stavi facendo, cosa ti aspettavi, la zona 
 
 Canale ufficiale: `t.me/lndefinizione`
 
+## Changelog
+
+### 1.2
+
+- La scheda Squadra del PvP mostra una riga di copertura: i tipi che nessuna mossa colpisce in modo superefficace e le debolezze condivise da due o più membri.
+
+### 1.1
+
+- Corretta la scorciatoia che mostra e nasconde l'overlay.
+
+### 1.0
+
+- Prima versione stabile. Il controllo aggiornamenti parte all'avvio, prima che la finestra si apra, con le note della release e la barra di avanzamento.
+
 ---
 
-Versione 1.1 · novembre 2026 · creato da @WolfHitech
+Versione 1.2 · novembre 2026 · creato da @WolfHitech
